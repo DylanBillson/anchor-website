@@ -1,2 +1,0 @@
-Food
-- Move "book a table" and "kitchen opening times" next to each other in a two column section
