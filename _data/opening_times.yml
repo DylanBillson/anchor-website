@@ -1,0 +1,27 @@
+bar:
+  hours:
+    - days: "Mon–Sun"
+      open: "11:00"
+      close: "23:00"
+
+food:
+  lunch:
+    hours:
+      - days: "Mon–Sat"
+        open: "12:00"
+        close: "14:30"
+
+  evening:
+    hours:
+      - days: "Mon–Sat"
+        open: "18:00"
+        close: "20:30"
+
+  sunday_roast:
+    hours:
+      - days: "Lunch"
+        open: "12:00"
+        close: "14:30"
+      - days: "Dinner"
+        open: "18:00"
+        close: "20:30"

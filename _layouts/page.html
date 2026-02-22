@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+{%- assign has_hero = false -%}
+{%- if page.hero_image and page.hero_image != "" -%}
+  {%- assign has_hero = true -%}
+{%- endif -%}
+
+{%- comment -%}
+Front matter options supported by this layout:
+
+title: "Page Title"                 (already used by Jekyll/SEO)
+description: "Meta description..."  (used by SEO tag)
+
+hero_image: /assets/img/hero.jpg
+hero_alt: "Alt text describing the image"
+hero_style: "normal" | "wide"       (optional; defaults to normal)
+hero_overlay: true|false            (optional; defaults true)
+intro: "Short intro paragraph..."   (optional)
+
+{%- endcomment -%}
+
+{% if has_hero %}
+  <section class="hero {% if page.hero_style == 'wide' %}hero--wide{% else %}hero--normal{% endif %}">
+    <div class="hero__media">
+      <img
+        src="{{ page.hero_image | relative_url }}"
+        alt="{{ page.hero_alt | default: '' | escape }}"
+        loading="eager"
+        decoding="async"
+      />
+      {% if page.hero_overlay != false %}
+        <div class="hero__overlay" aria-hidden="true"></div>
+      {% endif %}
+    </div>
+
+    <div class="hero__content">
+      <div class="container">
+        <h1 class="hero__title">{{ page.title | escape }}</h1>
+        {% if page.intro and page.intro != "" %}
+          <p class="hero__intro">{{ page.intro | escape }}</p>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+{% else %}
+  <header class="page-header">
+    <div class="container">
+      <h1 class="page-title">{{ page.title | escape }}</h1>
+      {% if page.intro and page.intro != "" %}
+        <p class="page-intro">{{ page.intro | escape }}</p>
+      {% endif %}
+    </div>
+  </header>
+{% endif %}
+
+<section class="page-content">
+  <div class="container">
+    {{ content }}
+  </div>
+</section>

@@ -1,0 +1,75 @@
+{%- assign menus = site.data.menus.menus -%}
+{%- assign key = include.section -%}
+{%- assign menu = menus[key] -%}
+
+{%- if menu == nil -%}
+  <p><em>Menu not found: {{ key | escape }}</em></p>
+{%- else -%}
+  <details class="menu-details">
+    <summary class="menu-details__summary">
+      <span class="menu-details__title">{{ menu.title | escape }}</span>
+      {%- if menu.subtitle -%}
+        <span class="menu-details__sub">{{ menu.subtitle | escape }}</span>
+      {%- endif -%}
+    </summary>
+
+    <section class="menu">
+      {% for cat in menu.categories %}
+        <section class="menu__category">
+          <h4 class="menu__category-title">{{ cat.name | escape }}</h4>
+
+          {% if cat.description %}
+            <p class="menu__category-desc">{{ cat.description | escape }}</p>
+          {% endif %}
+
+          <ul class="menu__items">
+            {% for item in cat.items %}
+              <li class="menu__item">
+                <div class="menu__item-top">
+                  <span class="menu__item-name">{{ item.name | escape }}</span>
+
+                  {% if item.price %}
+                    <span class="menu__item-price">{{ item.price | escape }}</span>
+                  {% endif %}
+                </div>
+
+                {% if item.description %}
+                  <p class="menu__item-desc">{{ item.description | escape }}</p>
+                {% endif %}
+
+                {%- assign has_tags = item.tags and item.tags.size > 0 -%}
+                {%- assign has_allergens = item.allergens and item.allergens.size > 0 -%}
+
+                {% if has_tags or has_allergens %}
+                  <p class="menu__item-meta">
+                    {% if has_tags %}
+                      <span class="menu__item-meta-group">
+                        <strong>Tags:</strong>
+                        {% for t in item.tags %}
+                          <span class="tag">{{ t | escape }}</span>
+                        {% endfor %}
+                      </span>
+                    {% endif %}
+
+                    {% if has_allergens %}
+                      <span class="menu__item-meta-group">
+                        <strong>Allergens:</strong>
+                        {% for a in item.allergens %}
+                          <span class="allergen">{{ a | escape }}</span>
+                        {% endfor %}
+                      </span>
+                    {% endif %}
+                  </p>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </section>
+      {% endfor %}
+
+      <p class="menu__disclaimer">
+        <em>Please let us know about any allergies or dietary requirements — we’ll do our best to accommodate.</em>
+      </p>
+    </section>
+  </details>
+{%- endif -%}

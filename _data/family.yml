@@ -1,0 +1,44 @@
+# Family-friendly activities near The Anchor Inn
+
+items:
+  - title: "The Big Sheep"
+    image: "/assets/img/local/family/the-big-sheep.avif"
+    description: "Rides, Shows, Animals & Family Entertainment, North Devon's largest Indoor Playground with Slides, Ball pits, Gladiator swings and soft play areas dedicated to toddlers. Animal shows are seasonal."
+    link_text: "More info"
+    link_url: "https://www.thebigsheep.co.uk/"
+
+  - title: "Clovelly"
+    image: "/assets/img/local/family/clovelly.avif"
+    description: "A beautiful, picturesque fishing village, steeped in maritime atmosphere and history. Originally the estate was owned by William the Conqueror, gifted to his wife and then had many royal associations until 1242 when first acquired by the Giffard family. Until the middle of the 19th century, Clovelly was unknown to the outside world."
+    link_text: "More info"
+    link_url: "https://www.clovelly.co.uk/"
+
+  - title: "Hartland Abbey"
+    image: "/assets/img/local/family/hartland-abbey.avif"
+    description: "The family home of the Stucleys, with treasures and memorabilia collected over many generations, gardens and parkland."
+    link_text: "More info"
+    link_url: "https://www.hartlandabbey.com/"
+
+  - title: "The Milky Way"
+    image: "/assets/img/local/family/the-milky-way.avif"
+    description: "Ride the Cosmic Typhoon, Devon’s tallest, fastest & longest roller coaster. Have a wild time in North Devon’s biggest indoor adventure play area with assault courses & slides built for adults & children. Over 110,000 sq ft of indoor fun & acres of outdoor activities, plus Bird of Prey Centre, Sports Centre and cafe."
+    link_text: "More info"
+    link_url: "https://www.themilkyway.co.uk/"
+
+  - title: "North Devon Maritime Museum"
+    image: "/assets/img/local/family/north-devon-maritime-museum.avif"
+    description: "The North Devon Maritime Museum offers a fascinating insight into the rich shipbuilding and seafaring history of the area. It is housed in a fine, Georgian Grade II listed building which has been the home of several ship owners and master mariners in the past 200 years and is situated in the picturesque village and sea port of Appledore."
+    link_text: "More info"
+    link_url: "https://northdevonmaritimemuseum.co.uk/"
+
+  - title: "North Devon Surf School"
+    image: "/assets/img/local/family/north-devon-surf-school.avif"
+    description: "'We are the highest rated surf school in the UK, running surfing lessons since 1988. We have a purpose built surfing and surf hire centre just 50 metres from Westward Ho! beach.'"
+    link_text: "More info"
+    link_url: "https://www.northdevonsurfschool.co.uk/"
+
+  - title: "Ultimate Adventure Centre"
+    image: "/assets/img/local/family/ultimate-adventure-centre.avif"
+    description: "'North Devon’s ultimate outdoor adventure destination, where you can choose from over 15 top-rated activities! Set in 35 acres of breathtaking parkland, there’s endless space to play, explore, and soak in the stunning scenery.'"
+    link_text: "More info"
+    link_url: "https://www.ultimateadventurecentre.com/"

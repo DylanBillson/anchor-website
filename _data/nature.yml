@@ -1,0 +1,50 @@
+# Local nature spots near The Anchor Inn
+
+items:
+  - title: "Beckland Woods"
+    image: "/assets/img/local/nature/beckland-woods.avif"
+    description: "Park at Brownsham National Trust Car park, you can then walk through the beautiful Beckland Woods and down to see Blackchurch Rock at Mouthmill."
+    link_text: "More info"
+    link_url: "https://www.hartlandpeninsula.co.uk/beaches-beauty-spots/beckland-woods/"
+
+  - title: "Blackchurch Rock"
+    image: "/assets/img/local/nature/blackchurch-rock.avif"
+    description: "This spectacular rock can be seen from the South West Coast Path near Windbury Hill."
+    link_text: "More info"
+    link_url: "https://www.hartlandpeninsula.co.uk/beaches-beauty-spots/blackchurch-rock/"
+
+  - title: "Blackpool Mill"
+    image: "/assets/img/local/nature/blackpool-mill.avif"
+    description: "Situated in a beautiful valley with Blackpool Mill Cottage being the location of both for the BBC dramas ‘Sense and Sensibility’, ‘The Shell Seekers’ and ‘The Night Manager’. The beach has many rock pools with sand at low tide and stunning coastal scenery all around."
+    link_text: "More info"
+    link_url: "https://www.hartlandpeninsula.co.uk/beaches-beauty-spots/blackpool-mill/"
+
+  - title: "Bursdon Moor"
+    image: "/assets/img/local/nature/bursdon-moor.avif"
+    description: "One of the last remaining areas of Culm Grassland can be found on this moor which has SSSI status. This high open moorland has far reaching spectacular views over moor, woodland and coastline stretching as far as the eye can see."
+    link_text: "More info"
+    link_url: "https://www.hartlandpeninsula.co.uk/beaches-beauty-spots/bursdon-moor/"
+
+  - title: "Marsland Mouth"
+    image: "/assets/img/local/nature/marsland-mouth.avif"
+    description: "A magical, secretive mix of woodland, coastline and butterfly-filled meadows, all in a single stream valley."
+    link_text: "More info"
+    link_url: "https://www.devonwildlifetrust.org/nature-reserves/marsland"
+
+  - title: "St. Catherine's Tor"
+    image: "/assets/img/local/nature/st-catherines-tor.avif"
+    description: "The tor is at the side of a sea dissected valley which is rare geological feature in England much visted by geologists, geographers and students. Spekes river once ran along the foot of the Tor and along the valley past Hartland Quay and on further north. The sea has eroded part of the land so that the river nows empties into the sea over a wonderfall tall waterfall."
+    link_text: "More info"
+    link_url: "https://www.hartlandpeninsula.co.uk/beaches-beauty-spots/st-catherines-tor/"
+
+  - title: "Speke's Mill"
+    image: "/assets/img/local/nature/spekes-mill.avif"
+    description: "A twenty-minute walk south of Hartland Quay brings you to Speke’s Mill Mouth with its beautiful waterfall and long curving beach. Access to the beach via steps gives you sandy stretches at low tide running down to the shore."
+    link_text: "More info"
+    link_url: "https://www.hartlandpeninsula.co.uk/beaches-beauty-spots/spekes-mill/"
+
+  - title: "Windbury Head Fort"
+    image: "/assets/img/local/nature/windbury-head-fort.avif"
+    description: "Crowning the summit of Beckland cliffs at 330 feet above sea level is Windbury Head Camp, thought to be an Iron Age enclosure or hill fort. Its precarious position jutting out into the Bristol Channel with its longer axis forming the edge of the cliff suggests that part of the original site has been eroded by the sea. The National Trust aims to keep the earthwork clearly visible so that visitors can appreciate the structure and setting of the site. Paths lead to the Fort from the South West Coast Path and from the National Trust carpark at Brownsham Woods."
+    link_text: "More info"
+    link_url: "https://www.hartlandpeninsula.co.uk/beaches-beauty-spots/windbury-hill-fort/"

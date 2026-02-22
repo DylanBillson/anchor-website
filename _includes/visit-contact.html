@@ -1,0 +1,24 @@
+{%- assign c = site.data.contact -%}
+
+<section class="core-info">
+  <div class="core-info__card">
+    <h2 class="core-info__heading">Visit & Contact</h2>
+
+    {% if c.address_lines %}
+      <address class="core-info__address">
+        {% for line in c.address_lines %}
+          {{ line | escape }}<br />
+        {% endfor %}
+      </address>
+    {% endif %}
+
+    <ul class="core-info__list">
+      {% if c.raw_phone %}
+        <li><strong>Phone:</strong> <a href="tel:+{{ c.raw_phone | escape }}">{{ c.phone | escape }}</a></li>
+      {% endif %}
+      {% if c.email %}
+        <li><strong>Email:</strong> <a href="mailto:{{ c.email | escape }}">{{ c.email | escape }}</a></li>
+      {% endif %}
+    </ul>
+  </div>
+</section>

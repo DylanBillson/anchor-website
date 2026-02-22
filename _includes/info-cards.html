@@ -1,0 +1,39 @@
+{%- assign data = site.data[include.source] -%}
+{%- assign items = data.items -%}
+
+<section class="info-cards">
+  <div class="info-cards__grid">
+    {% for item in items %}
+      <article class="info-card">
+        {% if item.image %}
+          <img
+            class="info-card__image"
+            src="{{ item.image | relative_url }}"
+            alt="{{ item.title | escape }}"
+            loading="lazy"
+            decoding="async"
+          />
+        {% endif %}
+
+        <div class="info-card__content">
+          <h3 class="info-card__title">{{ item.title | escape }}</h3>
+
+          {% if item.description %}
+            <p class="info-card__desc">{{ item.description | escape }}</p>
+          {% endif %}
+
+          {% if item.link_url %}
+            <a
+              class="info-card__button"
+              href="{{ item.link_url | escape }}"
+              target="_blank"
+              rel="noopener"
+            >
+              {{ item.link_text | default: "More info" | escape }}
+            </a>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,52 @@
+# Gallery items
+# date format: YYYY-MM-DD
+# type: "image" | "video"
+# tags: array of strings
+# pinned: true/false
+# media_url:
+#   - for image: direct image URL (can be external)
+#   - for video: YouTube/Vimeo URL, or direct MP4 URL
+# thumb_url:
+#   - optional, recommended for videos (poster image)
+#
+# Hosting note:
+# - You can host media on a CDN or another domain; keep only metadata here.
+
+tag_colors:
+  "Gig": "#2a7f8e"
+  "Event": "#437b93"
+  "Food": "#7a5ea3"
+  "Pub": "#4b8b63"
+
+items:
+  - title: "Maddie Storvold: Streets and Avenues"
+    date: "2024-05-29"
+    type: "video"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "https://www.youtube.com/watch?v=7qRVTBy5qP8"
+    thumb_url: "/assets/img/gallery/maddie-storvold-streets-and-avenues.jpg"
+
+  - title: "Harrison Wallace: Gypsy Lady"
+    date: "2024-03-14"
+    type: "video"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "https://www.youtube.com/watch?v=-uclCqWRDps"
+    thumb_url: "/assets/img/gallery/harrison-wallace-gypsy-lady.jpg"
+
+  - title: "Maddie Storvold: The Jim Cuddy Song"
+    date: "2024-03-14"
+    type: "video"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "https://www.youtube.com/watch?v=e3tPb4q-yRg"
+    thumb_url: "/assets/img/gallery/maddie-storvold-jim-cuddy-song.jpg"
+
+  - title: "Maddie Storvold: Amy"
+    date: "2024-03-12"
+    type: "video"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "https://www.youtube.com/watch?v=TNxlSn55o6c"
+    thumb_url: "/assets/img/gallery/maddie-storvold-amy.jpg"

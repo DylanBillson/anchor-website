@@ -1,0 +1,23 @@
+{% assign s = site.data.food.special %}
+{% if s and s.enabled %}
+<section class="highlight">
+  <div class="highlight__grid">
+    <div>
+      <h2 class="highlight__title">{{ s.title | escape }}</h2>
+      {% if s.text and s.text != "" %}
+        <p class="highlight__text">{{ s.text | escape }}</p>
+      {% endif %}
+      {% if s.button_url and s.button_url != "" %}
+        <a class="highlight__button" href="{{ s.button_url | escape }}" target="_blank" rel="noopener">
+          {{ s.button_text | default: "Learn more" | escape }}
+        </a>
+      {% endif %}
+    </div>
+    <div>
+      {% if s.poster_image and s.poster_image != "" %}
+        <img src="{{ s.poster_image | relative_url }}" alt="{{ s.poster_alt | default: '' | escape }}" loading="lazy" decoding="async" />
+      {% endif %}
+    </div>
+  </div>
+</section>
+{% endif %}

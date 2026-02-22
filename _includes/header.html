@@ -1,0 +1,34 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-header__brand" href="{{ '/' | relative_url }}">
+      {% if site.data.site.logo and site.data.site.logo != "" %}
+        <img
+          class="site-header__logo"
+          src="{{ site.data.site.logo | relative_url }}"
+          alt="{{ site.title | escape }} logo"
+          width="160"
+          height="48"
+          loading="eager"
+          decoding="async"
+        />
+      {% else %}
+        <span class="site-header__title">{{ site.title | escape }}</span>
+      {% endif %}
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-label="Open menu"
+      aria-controls="site-nav"
+      aria-expanded="false"
+      data-nav-toggle
+    >
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+      <span class="nav-toggle__bar" aria-hidden="true"></span>
+    </button>
+
+    {% include nav.html %}
+  </div>
+</header>

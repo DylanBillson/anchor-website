@@ -1,0 +1,28 @@
+<!-- HIGHLIGHT INCLUDE LOADED: 123 -->
+{% assign hs = site.data.whats_on.highlights %}
+{% if hs %}
+{% for h in hs %}
+{% if h.enabled %}
+<section class="highlight">
+<div class="highlight__grid">
+<div>
+<h2 class="highlight__title">{{ h.title | escape }}</h2>
+{% if h.text and h.text != "" %}
+<p class="highlight__text">{{ h.text | escape }}</p>
+{% endif %}
+{% if h.button_url and h.button_url != "" %}
+<a class="highlight__button" href="{{ h.button_url | escape }}" target="_blank" rel="noopener">
+{{ h.button_text | default: "Learn more" | escape }}
+</a>
+{% endif %}
+</div>
+<div>
+{% if h.poster_image and h.poster_image != "" %}
+<img src="{{ h.poster_image | relative_url }}" alt="{{ h.poster_alt | default: '' | escape }}" loading="lazy" decoding="async" />
+{% endif %}
+</div>
+</div>
+</section>
+{% endif %}
+{% endfor %}
+{% endif %}

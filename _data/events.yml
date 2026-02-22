@@ -1,0 +1,85 @@
+# Events list
+# date format: YYYY-MM-DD
+# time format: "19:30" (optional)
+# pinned: true/false
+# tags: array of short strings
+# tag_colors: optional mapping of tag => hex
+
+tag_colors:
+  "Live Music": "#2a7f8e"
+  "Quiz Night": "#437b93"
+  "Community": "#4b8b63"
+  "March Music Festival": "#7a5ea3"
+
+events:
+  - title: "Harrison Wallace & Friends"
+    description: "Piano-led jazz and blues jam session."
+    date: "2026-02-22"
+    time: "17:00"
+    pinned: true
+    tags: ["Live Music"]
+    poster_url: ""   # optional image URL
+    link_url: ""     # optional external link
+
+  - title: "Anchor Community Shanty Choir"
+    description: "Led by Scallywag Harrison Wallace: all welcome."
+    date: "2026-02-24"
+    time: "19:00 - 21:00"
+    pinned: false
+    tags: ["Live Music", "Community"]
+    poster_url: ""
+    link_url: ""
+
+  - title: "Dungeon & Dragons"
+    description: "Come and join the quest! All welcome."
+    date: "2026-02-25"
+    time: "18:00"
+    pinned: false
+    tags: ["Community"]
+    poster_url: ""
+    link_url: ""
+
+  - title: "Call & Collect Library Service"
+    description: "Pick up your library books from the Anchor. Call Ann on 01237 441414 for more information."
+    date: "2026-02-26"
+    time: "14:00 - 16:00"
+    pinned: false
+    tags: ["Community"]
+    poster_url: ""
+    link_url: ""
+
+  - title: "Book Club"
+    description: "Discussion of 'THere are Rivers in the Sky' by Elif Shafak. Call Ann on 01237 441414 for more information."
+    date: "2026-02-26"
+    time: "19:30"
+    pinned: false
+    tags: ["Community"]
+    poster_url: ""
+    link_url: ""
+
+  - title: "Hand to Hand"
+    description: "Four accomplished folk musicians, each with their own repertoire of songs and skills, passing songs between them, voice to voice and hand to hand. The result is magical!"
+    date: "2026-03-13"
+    time: "19:30"
+    pinned: false
+    tags: ["March Music Festival", "Live Music"]
+    poster_url: ""
+    link_url: ""
+  
+  - title: "Phil Maguire & The Balladeers"
+    description: "A touring South London-based band, playing traditional and contemporary folk, rock and blues."
+    date: "2026-03-14"
+    time: "20:00"
+    pinned: false
+    tags: ["March Music Festival", "Live Music"]
+    poster_url: ""
+    link_url: ""
+
+  - title: "Amanita Grove"
+    description: "Latin, Folk, Neo-Soul inspired duo with vocals, percussion, Spanish guitar, loops & lo-fi rhythms."
+    date: "2026-03-14"
+    time: "20:00"
+    pinned: false
+    tags: ["March Music Festival", "Live Music"]
+    poster_url: ""
+    link_url: ""

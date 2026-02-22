@@ -1,0 +1,55 @@
+---
+title: "The Anchor Inn"
+description: "Food, drinks, rooms and events at The Anchor Inn in Hartland. Opening times, booking and contact details."
+hero_image: /assets/img/hero/anchor-hero-home-temp.avif
+hero_alt: "The Anchor Inn in Hartland"
+hero_style: "wide"
+intro: "A welcoming village pub in Hartland — great food, good drinks, cosy rooms, and a calendar full of community events."
+---
+
+<section class="home-intro">
+  <div class="container">
+    <p>
+      Whether you’re local, walking the coast path, or visiting North Devon, The Anchor Inn is a warm place to eat, drink,
+      and relax.
+    </p>
+  </div>
+</section>
+
+<section class="home-core">
+  <div class="container">
+    {% include core-info.html
+      about="Opening daily from 11am. Join us for lunch and dinner through the week, and our Sunday Roast on Sundays."
+    %}
+  </div>
+</section>
+
+<section class="home-actions">
+  <div class="container">
+    <div class="home-actions__grid">
+      <a class="action-card" href="{{ '/food/' | relative_url }}">
+        <h2>Menus</h2>
+        <p>Lunch, dinner, kids and Sunday Roast menus — plus allergen information.</p>
+      </a>
+
+      <a class="action-card" href="{{ '/whats-on/' | relative_url }}">
+        <h2>What’s On</h2>
+        <p>Live music, community nights, and upcoming events — see what’s coming up.</p>
+      </a>
+
+      <a class="action-card" href="{{ '/contact/' | relative_url }}">
+        <h2>Contact</h2>
+        <p>Call, email, or find us on the map — we’re happy to help.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="home-booking">
+  <div class="container">
+    <h2>Book a table</h2>
+    <p>Reserve your table online. If you have any questions, give us a call.</p>
+
+    {% include table-booking.html %}
+  </div>
+</section>

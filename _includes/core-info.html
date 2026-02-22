@@ -1,0 +1,78 @@
+{%- assign show_times = include.show_times -%}
+{%- if show_times == nil -%}{%- assign show_times = true -%}{%- endif -%}
+{%- assign c = site.data.contact -%}
+{%- assign s = site.data.site -%}
+
+<section class="core-info">
+  <div class="core-info__grid">
+    <!-- Contact Details -->
+    <div class="core-info__card">
+      <h2 class="core-info__heading">Visit & Contact</h2>
+
+      {% if c.address_lines %}
+        <address class="core-info__address">
+          {% for line in c.address_lines %}
+            {{ line | escape }}<br />
+          {% endfor %}
+        </address>
+      {% endif %}
+
+      <ul class="core-info__list">
+        {% if c.raw_phone %}
+          <li>
+            <strong>Phone:</strong>
+            <a href="tel:+{{ c.raw_phone | escape }}">{{ c.phone | default: c.raw_phone | escape }}</a>
+          </li>
+        {% elsif c.phone %}
+          <li>
+            <strong>Phone:</strong>
+            <a href="tel:{{ c.phone | replace: ' ', '' | escape }}">{{ c.phone | escape }}</a>
+          </li>
+        {% endif %}
+
+        {% if c.email %}
+          <li>
+            <strong>Email:</strong>
+            <a href="mailto:{{ c.email | escape }}">{{ c.email | escape }}</a>
+          </li>
+        {% endif %}
+
+        {% if s.social and s.social.google_maps and s.social.google_maps != "" %}
+          <li>
+            <a href="{{ s.social.google_maps | escape }}" target="_blank" rel="noopener">
+              Get directions<span class="sr-only"> (opens in a new tab)</span>
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+
+      {% if s.rooms_url %}
+        <p class="core-info__rooms">
+          <strong>Booking a room?</strong>
+          Book directly with us at
+          <a href="{{ s.rooms_url | escape }}" target="_blank" rel="noopener">
+            rooms.anchorhartland.co.uk<span class="sr-only"> (opens in a new tab)</span>
+          </a>
+          for the best deals.
+        </p>
+      {% endif %}
+
+      {% if include.about and include.about != "" %}
+        <p class="core-info__about">{{ include.about | escape }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Opening Times -->
+    <div class="core-info__card">
+      {% if show_times %}
+        <div class="core-info__card">
+          {% if include.times_context %}
+            {% include opening-times.html context=include.times_context %}
+          {% else %}
+            {% include opening-times.html %}
+          {% endif %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>

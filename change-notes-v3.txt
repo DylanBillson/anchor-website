@@ -1,0 +1,7 @@
+Food
+- Special Menu optional section that can be turned on / off (should be a two column section with text on left, poster on right.)
+- Categories in menus need to have a optional description. For example on the lunch menu will be the catagory "Focacca rolls" and I need under it to say "All served with a rosemary and thyme focacca roll, salad, and chips"
+
+Footer
+- The Newsletter section, the bar to put in the users email and the sign up button are on diffrent lines on desktop, they should be next to each other.
+- Lets remove the information section from the footer. So it should just be two columns, the social icons and the newsletter section, then below that the copyright line.

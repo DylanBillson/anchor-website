@@ -1,0 +1,20 @@
+# Policies and documents
+# pdf_url can be:
+# - a local file in your repo (e.g. /assets/policies/example.pdf)
+# - or an external URL
+
+policies:
+  - title: "Privacy Policy"
+    description: "How we handle personal data when you contact us or make a booking."
+    updated: "2026-02-19"
+    pdf_url: "/assets/policies/privacy-policy.pdf"
+
+  - title: "Cookie Policy"
+    description: "Information about cookies used on this website."
+    updated: "2026-02-19"
+    pdf_url: "/assets/policies/cookie-policy.pdf"
+
+  - title: "Terms of Use"
+    description: "Website terms and conditions."
+    updated: "2026-02-19"
+    pdf_url: "/assets/policies/terms-of-use.pdf"

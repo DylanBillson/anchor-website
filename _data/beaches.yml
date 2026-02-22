@@ -1,0 +1,50 @@
+# Local beaches near The Anchor Inn
+
+items:
+  - title: "Blegberry"
+    image: "/assets/img/local/beaches/blegberry.avif"
+    description: "Accessible from the coast path, Hartland Quay via Blackpool Mill from the south and Blegberry from the north. A very quiet rocky beach with a few sandy strips at low tide."
+    link_text: "More info"
+    link_url: "https://www.hartlandpeninsula.co.uk/beaches-beauty-spots/berry-beach/"
+
+  - title: "Bucks Mills"
+    image: "/assets/img/local/beaches/bucks-mills.avif"
+    description: "A long and winding road leads through the valley to the visitor’s car park. The path then takes you to the sea, past old limekilns, to a pebbly beach with lovely rock pools. From the beach there are spectacular views of Bideford Bay and Lundy Island."
+    link_text: "More info"
+    link_url: "https://www.visitdevon.co.uk/northdevon/listings-northdevon/bucks-mills-beach/251336301/"
+
+  - title: "Duckpool"
+    image: "/assets/img/local/beaches/duckpool.avif"
+    description: "Nestling between the high headlands of Warren Point and Steeple Point, both over 100 metres high. Duckpool is approached via a wooded valley. With a small free car park, this beach is a good starting point for a coast path walk south to Sandymouth. Lovely views south to Trevose Head. Sandy beach at low tide but not suitable for swimmers."
+    link_text: "More info"
+    link_url: "https://www.hartlandpeninsula.co.uk/beaches-beauty-spots/duckpool/"
+
+  - title: "Hartland Quay"
+    image: "/assets/img/local/beaches/hartland-quay.avif"
+    description: "The spectacular cliffs at Hartland Quay with their incredibly contorted rock layers are always worth a visit and at low tide there is plenty of sand, rock pools and rocks to scramble over. In wild weather it is the perfect place to appreciate the power of the sea and wind as the waves crash against the cliffs and shore. With access to the South West Coast Path both North and South from the Quay, it makes an ideal start/finish point for a wide variety of walks."
+    link_text: "More info"
+    link_url: "https://www.hartlandpeninsula.co.uk/beaches-beauty-spots/hartland-quay/"
+
+  - title: "Marsland Mouth"
+    image: "/assets/img/local/beaches/marsland-mouth.avif"
+    description: "A very quiet and peaceful beach set in the Welcombe and Marshland Valleys Nature Reserve. This is very much an untouched beach consisting mainly of pebbles and rocks. However, at low tide there is some softer golden sands and plenty of rock pools to explore. There is a beautiful freshwater stream that runs down to the beach which interestingly marks the border between North Cornwall and Devon. Marshland Mouth is not really what could be described as a family beach; it is both remote and bathing is not generally safe. It is a good spot for dog walkers, with no restrictions throughout the year and plenty of unspoilt scenery."
+    link_text: "More info"
+    link_url: "https://www.cornwall-beaches.co.uk/north-cornwall/marshland-mouth.htm"
+
+  - title: "Sandymouth"
+    image: "/assets/img/local/beaches/sandymouth.avif"
+    description: "A large sandy well-sheltered National Trust beach, popular with swimmers and surfers alike. The cliffs surrounding the beach offer a great variety of wild flowers and there are breathtaking views south to Bude and Trevose Head. Large paid car park and lovely tearoom. Lifeguard cover during the holiday season; beware of strong rip-tide."
+    link_text: "More info"
+    link_url: "https://www.nationaltrust.org.uk/visit/cornwall/sandymouth"
+
+  - title: "Speke's Mill Mouth"
+    image: "/assets/img/local/beaches/spekes-mill-mouth.avif"
+    description: "A twenty-minute walk south of Hartland Quay brings you to Speke’s Mill Mouth with its beautiful waterfall and long curving beach. Access to the beach via steps gives you sandy stretches at low tide running down to the shore. Surfers like to visit Spekes for its renowned reef brake, yet it remains peaceful and quiet even at the height of summer."
+    link_text: "More info"
+    link_url: "https://www.hartlandpeninsula.co.uk/beaches-beauty-spots/spekes-mill-mouth/"
+
+  - title: "Welcombe Mouth"
+    image: "/assets/img/local/beaches/welcombe-mouth.avif"
+    description: "A secluded and quiet bay located at the end of a rough unmade road. A small car park gives access to one of the loveliest beaches near Hartland. Some of the lanes to get there are quite narrow but it is worth the effort. Sandy from mid tide onwards, it also offers some excellent rock pools."
+    link_text: "More info"
+    link_url: "https://www.nationaltrust.org.uk/visit/devon/bideford-bay-and-hartland/a-short-walk-around-welcombe-mouth"

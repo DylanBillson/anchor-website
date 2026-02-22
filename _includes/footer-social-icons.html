@@ -1,0 +1,43 @@
+<ul class="site-footer__social-icons" aria-label="Social links">
+  {% if site.data.site.social.facebook and site.data.site.social.facebook != "" %}
+    <li><a href="{{ site.data.site.social.facebook | escape }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/social/facebook-icon.svg' | relative_url }}" alt="Facebook" />
+    </a></li>
+  {% endif %}
+
+  {% if site.data.site.social.instagram and site.data.site.social.instagram != "" %}
+    <li><a href="{{ site.data.site.social.instagram | escape }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/social/instagram-icon.svg' | relative_url }}" alt="Instagram" />
+    </a></li>
+  {% endif %}
+
+  {% if site.data.site.social.threads and site.data.site.social.threads != "" %}
+    <li><a href="{{ site.data.site.social.threads | escape }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/social/threads-icon.svg' | relative_url }}" alt="Threads" />
+    </a></li>
+  {% endif %}
+
+  {% if site.data.site.social.tripadvisor and site.data.site.social.tripadvisor != "" %}
+    <li><a href="{{ site.data.site.social.tripadvisor | escape }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/social/tripadvisor-icon.svg' | relative_url }}" alt="Tripadvisor" />
+    </a></li>
+  {% endif %}
+
+  {% if site.data.site.social.bluesky and site.data.site.social.bluesky != "" %}
+    <li><a href="{{ site.data.site.social.bluesky | escape }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/social/bluesky-icon.svg' | relative_url }}" alt="Bluesky" />
+    </a></li>
+  {% endif %}
+
+  {% if site.data.site.social.mastodon and site.data.site.social.mastodon != "" %}
+    <li><a href="{{ site.data.site.social.mastodon | escape }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/social/mastodon-icon.svg' | relative_url }}" alt="Mastodon" />
+    </a></li>
+  {% endif %}
+
+  {% if site.data.site.social.youtube and site.data.site.social.youtube != "" %}
+    <li><a href="{{ site.data.site.social.youtube | escape }}" target="_blank" rel="noopener">
+      <img src="{{ '/assets/img/social/youtube-icon.svg' | relative_url }}" alt="YouTube" />
+    </a></li>
+  {% endif %}
+</ul>

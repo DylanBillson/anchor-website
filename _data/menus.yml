@@ -1,0 +1,401 @@
+# Menus for The Anchor Inn
+# Notes:
+# - price should be a string (e.g. "£12.50") so you can format however you like.
+# - tags are short labels like "V", "VE", "GF" etc (you choose what they mean).
+# - allergens are optional. Use short codes e.g. "GL" (gluten), "DA" (dairy), "EG" (egg).
+
+tag_legend:
+  V: "Vegetarian"
+  VE: "Vegan"
+  GF: "Gluten-free (or can be made gluten-free)"
+  DF: "Dairy-free (or can be made dairy-free)"
+
+allergen_legend:
+  1: "Celery"
+  2: "Cereals containing gluten"
+  3: "Crustacceans"
+  4: "Eggs"
+  5: "Fish"
+  6: "Lupin"
+  7: "Milk"
+  8: "Molluscs"
+  9: "Mustard"
+  10: "Nuts"
+  11: "Peanuts"
+  12: "Sesame seeds"
+  13: "Soya"
+  14: "Sulpher dioxide (sulphites)"
+  15: "Onion"
+  16: "Garlic"
+  17: "Citrus"
+
+menus:
+  lunch:
+    title: "Lunch"
+    subtitle: "Served Monday to Saturday, 12:00–14:30"
+    notes:
+      - "Example items below — replace with your real menu."
+    categories:
+      - name: "Focaccia rolls"
+        description: "Served with chips and salad garnish."
+        items:
+          - name: "Meat or fish"
+            description: "Choose Pork and black pudding OR prawn OR briskett"
+            price: "£12.50"
+            allergens: ["2", "3", "4", "9", "15", "16"]
+          - name: "Vegetarian"
+            description: "Choose vegan sausage and onion OR cheese and chutney"
+            price: "£12.50"
+            tags: ["V"]
+            allergens: ["2", "4", "7", "9", "15"]
+          - name: "Vegan"
+            description: "Same choices as vegetarian but on a baguette"
+            price: "£12.50"
+            tags: ["VE"]
+            allergens: ["2", "9", "15"]
+
+      - name: "Meat or Fish"
+        items:
+          - name: "Classic fish & chips"
+            description: "Beer-battered with minted crushed peas and tartare sauce"
+            price: "£15.50"
+            allergens: ["2", "5"]
+          - name: "Scampi and chips"
+            description: "Breaded scampi with peas or side salad"
+            price: "£14.00"
+            allergens: ["2", "8", "9"]
+          - name: "Chicken Caesar salad"
+            description: "Grilled chicken on romaine, creamy Caesar dressing, garlic croutons, parmesan, crispy bacon"
+            price: "£12.50"
+            allergens: ["2", "4", "7", "15", "16"]
+          - name: "All-day breakfast"
+            description: "Local sausages, bacon, tomato, mushrooms, egg how you like it, beans, hash brown, toast"
+            price: "£13.00"
+            allergens: ["2", "4"]
+          - name: "Anchor burger"
+            description: "Either beef or asian-spiced chicken, lettuce, tomato, bacon, onion rings, cheddar (not with the Asian spiced), sriracha mayo, salad, chips"
+            price: "£16.00"
+            allergens: ["2", "7", "9", "12", "15"]
+          - name: "Ham, egg and chips"
+            description: "West-country ham and free-range eggs"
+            price: "£13.00"
+            allergens: ["4"]
+
+      - name: "Sides"
+        items:
+          - name: "Garlic bread"
+            price: "£3.50"
+          - name: "Halloumi fries"
+            price: "£4.00"
+          - name: "Sweet potato fries"
+            price: "£4.00"
+          - name: "Chips: large"
+            price: "£5.00"
+          - name: "Chips: small"
+            price: "£3.00"
+          - name: "Cheesy chips: add"
+            price: "£1.00"
+          - name: "Onion rings"
+            price: "£4.00"
+          - name: "Mixed veg"
+            price: "£4.00"
+          - name: "Side salad"
+            price: "£3.00"
+
+      - name: "Desserts"
+        items:
+          - name: "Sticky toffee pudding"
+            description: "Served with butterscotch sauce, salted caramel ice cream"
+            price: "£7.00"
+            allergens: ["2", "4", "7", "14"]
+          - name: "Warm brownie"
+            description: "Served ice cream"
+            price: "£7.00"
+            allergens: ["2", "4"]
+          - name: "Sundae: sticky toffee brownie, or fruit"
+            description: "Served with ice cream, cream (berries for vegan)"
+            price: "£7.00, Small £5.00"
+          - name: "Caramelised biscuit cheesecake"
+            description: "Served with vanilla ice cream"
+            price: "£7.00"
+            allergens: ["2", "4", "7"]
+          - name: "Crumble"
+            description: "Served with custard or ice cream"
+            price: "£7.00"
+            allergens: ["7"]
+          - name: "Cheeseboard"
+            description: "Served with selected cheeses and crackers"
+            price: "£10.00"
+            allergens: ["2", "7", "12"]
+
+  dinner:
+    title: "Dinner"
+    subtitle: "Served Monday to Saturday, 18:00–20:30"
+    categories:
+      - name: "Starters"
+        items:
+          - name: "Artisan bread board"
+            description: "Warm artisan breads with carrot hummus, marinated olives,and a crisp side salad"
+            price: "£6.50"
+            allergens: ["2", "4", "7", "9", "13"]
+          - name: "Belly bites"
+            description: "Pork belly glazed in hoisin sauce, paired with Asian pickle"
+            price: "£7.00"
+          - name: "West country mussels"
+            description: "Steamed mussels in a sauce of the day"
+            price: "£6.00"
+            allergens: ["2", "4", "8"]
+          - name: "Soup of the day"
+            description: "Chef’s seasonal creation, served with warm crusty bread"
+            price: "£6.50"
+            allergens: ["2"]
+          - name: "Nachos"
+            description: "Home-made nachos with melted cheese, guacamole, salsa,sour cream and jalapenos"
+            price: "£6.00"
+            allergens: ["15"]
+          - name: "Bruschetta"
+            description: "Tomato bruschetta, mozzarella, and balsamic"
+            price: "£6.00"
+            allergens: ["2", "4", "15"]
+          - name: "Brie wedges"
+            description: "Breaded brie, salad, cranberry and orange sauce"
+            price: "£7.00"
+            allergens: ["2", "7", "9"]            
+
+      - name: "Meat & poultry favourites"
+        items:
+          - name: "10oz sirloin steak"
+            description: "Sirloin, cooked to your liking, with onion rings, chips,roasted tomatoes, mushrooms, and salad. Add peppercornsauce (£1.5), blue cheese (£2)"
+            price: "£28.00"
+            allergens: ["9", "15", "16"]
+          - name: "Anchor burger"
+            description: "Either beef or asian-spiced chicken, lettuce, tomato, bacon, onion rings, cheddar (not with the Asian spiced), sriracha mayo, salad, chips"
+            price: "£16.00"
+            allergens: ["2", "7", "9", "12", "15"]
+          - name: "Hunter's chicken"
+            description: "Chicken breast, BBQ sauce, bacon, melted cheese, chips, side salad"
+            price: "£16.00"
+            allergens: ["7", "9"]
+          - name: "Proper pie of the day"
+            description: "Homemade pie with today’s filling, garlic and thyme mash (or chips), greens, red cabbage, and rich jus"
+            price: "£16.00"
+            allergens: ["2", "15", "16"]
+          - name: "Chicken Caesar salad"
+            description: "Grilled chicken on romaine, creamy Caesar dressing, garlic croutons, parmesan, crispy bacon"
+            price: "£12.50"
+            allergens: ["2", "4", "7", "15", "16"]
+          - name: "Curry of the day"
+            description: "Chef’s curry, rice, crisp papadom"
+            price: "£15.00"
+
+      - name: "Seafood specialities"
+        items:
+          - name: "Classic fish & chips"
+            description: "Beer-battered with minted crushed peas and tartare sauce"
+            price: "£15.50"
+            allergens: ["2", "5"]
+          - name: "Pan-fried catch"
+            description: "Please see our specials board for today’s fresh selection"
+            price: "See board"
+            allergens: ["5"]
+          - name: "Moules marinières"
+            description: "Steamed mussels in chef’s sauce of the day, with warm crusty bread."
+            price: "£16.50"
+            allergens: ["2", "8"]
+
+      - name: "Vegan & vegetarian"
+        items:
+          - name: "Carlin pea burger"
+            description: "Plant-based patty, lettuce, tomato, citrus mayo, salad, chips"
+            price: "£16.00"
+            allergens: ["2", "9", "12", "15", "17"]
+          - name: "Halloumi burger"
+            description: "Halloumi, lettuce, tomato, sweet chilli, salad, chips"
+            price: "£16.00"
+            allergens: ["2", "9", "12", "15"]
+          - name: "Veg en croute"
+            description: "Roasted veg in pastry, rich vegan jus, greens, red cabbage,sweet potato parmentie"
+            price: "£15.50"
+            allergens: ["2", "13", "15", "16"]
+          - name: "Curry of the day"
+            description: "Chef’s vegan curry, rice, crisp papadom"
+            price: "£15.00"
+          - name: "Loaded vegan burrito bowl"
+            description: "Beans, salad, and protein-rich grains for a bowl of satisfying nutrition"
+            price: "£12.50"
+            allergens: ["9", "13"]
+          - name: "Gemista"
+            description: "Greek dish of stuffed vegetables and buckwheat, brimmingwith the sun-soaked flavors of the Mediterranean"
+            price: "£13.50"
+            allergens: ["15", "16"]
+          - name: "Vegan kashotto"
+            description: "Seasonal vegetables, pulses, and buckwheat groats, in adeep, robust sauce"
+            price: "£12.00"
+            allergens: ["13", "15", "16"]
+
+      - name: "Sides"
+        items:
+          - name: "Garlic bread"
+            price: "£3.50"
+          - name: "Halloumi fries"
+            price: "£4.00"
+          - name: "Sweet potato fries"
+            price: "£4.00"
+          - name: "Chips: large"
+            price: "£5.00"
+          - name: "Chips: small"
+            price: "£3.00"
+          - name: "Cheesy chips: add"
+            price: "£1.00"
+          - name: "Onion rings"
+            price: "£4.00"
+          - name: "Mixed veg"
+            price: "£4.00"
+          - name: "Side salad"
+            price: "£3.00"
+
+      - name: "Desserts"
+        items:
+          - name: "Sticky toffee pudding"
+            description: "Served with butterscotch sauce, salted caramel ice cream"
+            price: "£7.00"
+            allergens: ["2", "4", "7", "14"]
+          - name: "Warm brownie"
+            description: "Served ice cream"
+            price: "£7.00"
+            allergens: ["2", "4"]
+          - name: "Sundae: sticky toffee brownie, or fruit"
+            description: "Served with ice cream, cream (berries for vegan)"
+            price: "£7.00, Small £5.00"
+          - name: "Caramelised biscuit cheesecake"
+            description: "Served with vanilla ice cream"
+            price: "£7.00"
+            allergens: ["2", "4", "7"]
+          - name: "Crumble"
+            description: "Served with custard or ice cream"
+            price: "£7.00"
+            allergens: ["7"]
+          - name: "Cheeseboard"
+            description: "Served with selected cheeses and crackers"
+            price: "£10.00"
+            allergens: ["2", "7", "12"]
+
+  kids:
+    title: "Kids"
+    subtitle: "Available during kitchen service"
+    categories:
+      - name: "Kids Mains"
+        description: "We endeavour to keep the menu up to date, however, some items may vary depending on availability. The current menu is available in The Anchor."
+        items:
+          - name: "Sausage, chips and peas or beans"
+            description: "Vegan sausage available on request"
+            price: "£6.00"
+          - name: "Small fish, chips and peas or beans"
+            description: "Chips can be swapped for new potatoes on request"
+            price: "£6.00"
+          - name: "Chicken nuggets, chips and peas or beans"
+            description: "Chips can be swapped for new potatoes on request"
+            price: "£6.00"
+
+  sunday:
+    title: "Sunday Roast"
+    subtitle: "Served Sunday, 12:00–14:30 and 18:00–20:30"
+    categories:
+      - name: "Roasts"
+        description: "All roasts are served with roast potatoes, Yorkshire pudding, cauliflower cheese, parsnip puree, carrots, braised red cabbage, butternut squash, and seasonal greens. Let us know if you would like gluten-free variants or vegan cauliflower cheese."
+        items:
+          - name: "Topside of beef"
+            description: "Please say if you don't want your beef pink"
+            price: "£15.95"
+            allergens: ["2", "4", "9", "15", "16"]
+          - name: "Roast chicken"
+            description: ""
+            price: "£15.95"
+            allergens: ["2", "4", "9", "15", "16"]
+          - name: "Pork or lamb"
+            description: "Please ask your server which one we are serving this week"
+            price: "£15.95"
+            allergens: ["2", "4", "9", "15", "16"]
+          - name: "Mixed roast"
+            description: "Choose a micture of TWO meats"
+            price: "£16.95"
+            allergens: ["2", "4", "9", "15", "16"]
+          - name: "Nut roast"
+            description: "Please specify if you want the vegan version"
+            price: "£15.00"
+            allergens: ["4", "9", "10", "15", "16"]
+          - name: "Veg en croute"
+            description: "Roasted veg in pastry"
+            price: "£15.50"
+            allergens: ["2", "4", "9", "15", "16"]
+          - name: "Small roast"
+            description: "The same options but not quite so much"
+            price: "£10.95"
+          - name: "Small mixed roast"
+            description: "A smaller mixture of two meats of your choice"
+            price: "£10.95"
+
+      - name: "Bar meals"
+        items:
+          - name: "Curry of the day"
+            description: "Chef’s curry, rice, crisp papadom"
+            price: "£15.00"
+          - name: "Classic fish & chips"
+            description: "Beer-battered with minted crushed peas and tartare sauce"
+            price: "£15.50"
+            allergens: ["2", "5"]
+          - name: "Carlin pea burger"
+            description: "Plant-based patty, lettuce, tomato, citrus mayo, salad, chips"
+            price: "£16.00"
+            allergens: ["2", "9", "12", "15", "17"]
+          - name: "Halloumi burger"
+            description: "Halloumi, lettuce, tomato, sweet chilli, salad, chips"
+            price: "£16.00"
+            allergens: ["2", "9", "12", "15"]
+          - name: "Anchor burger"
+            description: "Either beef or asian-spiced chicken, lettuce, tomato, bacon, onion rings, cheddar (not with the Asian spiced), sriracha mayo, salad, chips"
+            price: "£16.00"
+            allergens: ["2", "7", "9", "12", "15"]
+
+      - name: "Sides"
+        items:
+          - name: "Roast potatoes"
+            price: "£4.00"
+          - name: "Gravy"
+            price: "£1.50"
+          - name: "Side of veg"
+            price: "£4.00"
+          - name: "Chips: large"
+            price: "£5.00"
+          - name: "Chips: small"
+            price: "£3.00"
+          - name: "Cheesy chips: add"
+            price: "£1.00"
+          - name: "Onion rings"
+            price: "£4.00"
+
+      - name: "Desserts"
+        items:
+          - name: "Sticky toffee pudding"
+            description: "Served with butterscotch sauce, salted caramel ice cream"
+            price: "£7.00"
+            allergens: ["2", "4", "7", "14"]
+          - name: "Warm brownie"
+            description: "Served ice cream"
+            price: "£7.00"
+            allergens: ["2", "4"]
+          - name: "Sundae: sticky toffee brownie, or fruit"
+            description: "Served with ice cream, cream (berries for vegan)"
+            price: "£7.00, Small £5.00"
+          - name: "Caramelised biscuit cheesecake"
+            description: "Served with vanilla ice cream"
+            price: "£7.00"
+            allergens: ["2", "4", "7"]
+          - name: "Crumble"
+            description: "Served with custard or ice cream"
+            price: "£7.00"
+            allergens: ["7"]
+          - name: "Cheeseboard"
+            description: "Served with selected cheeses and crackers"
+            price: "£10.00"
+            allergens: ["2", "7", "12"]

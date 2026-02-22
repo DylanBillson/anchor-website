@@ -1,0 +1,35 @@
+General
+- Replace “Sun” from times on the sunday lunch section with lunch / dinner
+- Remove subtext from lunch/evening and just change the titles to “Lunch (Monday to Saturday)” etc
+- Darken the 'light' text to make it more readable
+
+Footer
+- Remove contact information column from the footer
+- Change the copyright to “Riding To The Anchor Inn Limited” so the full line should read “© 2026 Riding To The Anchor Inn Limited. All rights reserved. Part of the Galassify family.”
+- Change the the social front text to svg logos (only need Facebook, Instagram, Threads, Tripadvisor, Bluesky, Mastodon and Youtube in that order) location will be 'E:\#Git\anchor-website\assets\img\social' eg 'E:\#Git\anchor-website\assets\img\social\facebook-icon.svg'
+
+Navbar
+- Ensure all buttons text is one line (shrink text if needed)
+- Make the dropdown text match the other buttons on the navbar
+- Remove werid circles next to the options on the dropdown
+
+Bar & Terrace
+- Make the sun terrace section two columns with an image on one side
+
+Food
+- Make menus dropdown, to reduce scroll.
+- Move the Dietary tags so they don't widen a menu option so much, prehaps put them inline with Allergens.
+
+Contact
+- Add a subject dropdown to contact form
+- Add a phone number section to contact form
+- Remove 'Opening Times' section and have Vist & Contact and Contact form next to each other (unless on mobile)
+- Remove Hero Image
+
+Policies
+- Remove Hero Image
+
+What's On
+- We haven't created the optional highlight section for the What's on page, which should be a two column section, with text on one side and an image (poster) on the other. Perhaps this can be a .yml and have a toggle in there for on / off?
+
+

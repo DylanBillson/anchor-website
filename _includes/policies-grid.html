@@ -1,0 +1,30 @@
+<section class="policies">
+  <div class="policies__grid">
+    {% for p in site.data.policies.policies %}
+      <article class="policy-card">
+        <h3 class="policy-card__title">{{ p.title | escape }}</h3>
+
+        {% if p.description %}
+          <p class="policy-card__desc">{{ p.description | escape }}</p>
+        {% endif %}
+
+        <p class="policy-card__meta">
+          {% if p.updated and p.updated != "" %}
+            <span><strong>Updated:</strong> {{ p.updated | escape }}</span>
+          {% endif %}
+        </p>
+
+        {% if p.pdf_url %}
+          <a
+            class="policy-card__button"
+            href="{{ p.pdf_url | relative_url }}"
+            target="_blank"
+            rel="noopener"
+          >
+            Open PDF
+          </a>
+        {% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>

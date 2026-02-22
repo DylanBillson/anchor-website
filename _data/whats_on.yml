@@ -1,0 +1,16 @@
+highlights:
+  - enabled: true
+    title: "Sam Dowden at The Anchor on 15th of February"
+    text: "Sam Dowden is a popular local North Devon performer, singer and song writer. He is also an accomplished loop pedal artist. He has a large catalogue of original songs and covers, and is a regular at The Anchor."
+    poster_image: "/assets/img/events/dowden-feb-26.avif"
+    poster_alt: "Sam Dowden Feb 26 Poster"
+    button_text: "Learn more"
+    button_url: ""
+
+  - enabled: true
+    title: "Music Festival March 13-15"
+    text: "Three days of exceptional music with two touring bands and one of the best local duos around. Keep an eye on our website and facebook pages for more information and special deals, including accommodation"
+    poster_image: "/assets/img/events/march-music-fest.avif"
+    poster_alt: "Festival poster"
+    button_text: "View details"
+    button_url: ""

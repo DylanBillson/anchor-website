@@ -1,0 +1,72 @@
+# -----------------------------------
+# Site Settings
+# -----------------------------------
+
+title: "The Anchor Inn"
+description: "Food, drinks, rooms and events at The Anchor Inn in Hartland, North Devon."
+url: "https://anchor.billson.li"   # Replace with live domain later
+baseurl: ""                               # Leave blank for root deployment
+
+# -----------------------------------
+# Build Settings
+# -----------------------------------
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# -----------------------------------
+# Defaults
+# Automatically apply layout & metadata
+# -----------------------------------
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: page
+      og_image: /assets/img/og/default.jpg
+
+# -----------------------------------
+# Exclude from Build
+# -----------------------------------
+
+exclude:
+  - README.md
+  - node_modules
+  - package.json
+  - package-lock.json
+  - Gemfile
+  - Gemfile.lock
+
+# -----------------------------------
+# Collections (Optional - for future expansion)
+# Currently not required but good foundation
+# -----------------------------------
+
+collections:
+  posts:
+    output: false
+
+# -----------------------------------
+# Sass (Optional, if you use it later)
+# -----------------------------------
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+# -----------------------------------
+# Plugins (GitHub Pages safe only)
+# -----------------------------------
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# -----------------------------------
+# Timezone
+# -----------------------------------
+
+timezone: Europe/London

@@ -1,0 +1,17 @@
+Footer
+- Changes to CSS removed the columns altogether (they're just stacked ontop of each other now) I'd like it so the short info section and the newsletter sign up section are next to each other on desktop and then below that is the social icons and then below that is the copyright bit.
+- I don't want outlines for the social media icons, they're already circles. I'd also like to increase their size a bit.
+
+Food / Menus
+- The menus need to be more obviously dropdowns, can you make some suggestions?
+
+What's On
+- We need to create an optional secondary highlight / featured event section. For example there's a three day music festival coming up, so I need to have the next featured event top, then a section about the music video and then the normal event grid.
+
+Bar & Terrace
+- I want to move the amenities section to the bottom to be in a two column section (when on desktop) with the piano bit. 
+- The photo in the sun terrace section only sligns with the paragraph text, but I think should align with the title too (The Sun Terrace)
+- I want to add a photo next to the text about The Bar too.
+
+Contact
+- There's three columns on the contact page, the visit & Contact section, then a blank column and then the contact form. Presume this is from something hanging over from the changes earlier.

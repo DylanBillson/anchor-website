@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    {% include head.html %}
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+
+    {% include header.html %}
+
+    <main id="main-content" class="site-main">
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+
+    <!-- Global site JS (optional but recommended for nav interactions etc.) -->
+    <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+
+    <!-- Page-specific JS bundles -->
+    {% if page.js %}
+      {% for file in page.js %}
+        <script src="{{ '/assets/js/' | append: file | append: '.js' | relative_url }}" defer></script>
+      {% endfor %}
+    {% endif %}
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="site-footer__top">
+      <div class="site-footer__top-left">
+        {% include footer-social-icons.html %}
+      </div>
+
+      <div class="site-footer__top-right">
+        <h2 class="site-footer__heading">Newsletter</h2>
+        <p class="site-footer__text">Occasional updates on menus, events, and news from The Anchor.</p>
+
+        <form class="site-footer__form" action="#" method="post">
+          <div class="site-footer__form-row">
+            <label class="sr-only" for="newsletter-email">Email address</label>
+            <input id="newsletter-email" type="email" name="email" placeholder="Email address" />
+            <button type="submit">Sign up</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p class="site-footer__small">
+        &copy; {{ "now" | date: "%Y" }} Riding To The Anchor Inn Limited. All rights reserved. {{ site.data.site.galassify_note | escape }}
+      </p>
+    </div>
+  </div>
+</footer>

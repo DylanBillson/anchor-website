@@ -1,0 +1,65 @@
+<nav class="site-nav" id="site-nav" aria-label="Primary navigation" data-nav>
+  <ul class="site-nav__list">
+    <li class="site-nav__item">
+      <a class="site-nav__link" href="{{ '/' | relative_url }}">Home</a>
+    </li>
+
+    <li class="site-nav__item">
+      <a class="site-nav__link" href="{{ '/about/' | relative_url }}">About</a>
+    </li>
+
+    <li class="site-nav__item">
+      <a class="site-nav__link" href="{{ '/bar-and-terrace/' | relative_url }}">Bar &amp; Terrace</a>
+    </li>
+
+    <li class="site-nav__item">
+      <a class="site-nav__link" href="{{ '/food/' | relative_url }}">Food</a>
+    </li>
+
+    <li class="site-nav__item">
+      <a
+        class="site-nav__link"
+        href="{{ site.data.site.rooms_url | default: 'https://rooms.anchorhartland.co.uk' | escape }}"
+        target="_blank"
+        rel="noopener"
+      >
+        Rooms
+      </a>
+    </li>
+
+    <li class="site-nav__item">
+      <a class="site-nav__link" href="{{ '/whats-on/' | relative_url }}">What’s On</a>
+    </li>
+
+    <li class="site-nav__item">
+      <a class="site-nav__link" href="{{ '/functions/' | relative_url }}">Functions</a>
+    </li>
+
+    <li class="site-nav__item">
+      <a class="site-nav__link" href="{{ '/contact/' | relative_url }}">Contact</a>
+    </li>
+
+    <!-- Dropdown -->
+    <li class="site-nav__item site-nav__item--dropdown" data-dropdown>
+      <button
+        class="site-nav__link site-nav__dropdown-toggle"
+        type="button"
+        aria-haspopup="true"
+        aria-expanded="false"
+        data-dropdown-toggle
+      >
+        More Information
+        <span class="site-nav__caret" aria-hidden="true">▾</span>
+      </button>
+
+      <ul class="site-nav__dropdown" data-dropdown-menu>
+        <li><a class="site-nav__dropdown-link" href="{{ '/more/walkers/' | relative_url }}">Walkers</a></li>
+        <li><a class="site-nav__dropdown-link" href="{{ '/more/local-beaches/' | relative_url }}">Local Beaches</a></li>
+        <li><a class="site-nav__dropdown-link" href="{{ '/more/local-nature/' | relative_url }}">Local Nature</a></li>
+        <li><a class="site-nav__dropdown-link" href="{{ '/more/family-activities/' | relative_url }}">Family Activities</a></li>
+        <li><a class="site-nav__dropdown-link" href="{{ '/more/gallery/' | relative_url }}">Gallery</a></li>
+        <li><a class="site-nav__dropdown-link" href="{{ '/more/policies/' | relative_url }}">Policies</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>

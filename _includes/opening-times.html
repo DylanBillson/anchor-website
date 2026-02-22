@@ -1,0 +1,72 @@
+{%- assign ctx = include.context | default: "all" -%}
+{%- assign ot = site.data.opening_times -%}
+
+<section class="opening-times">
+  <h2 class="opening-times__title">Opening Times</h2>
+
+  {%- if ctx == "all" or ctx == "bar" -%}
+    <div class="opening-times__block">
+      <h3 class="opening-times__heading">Bar</h3>
+      <ul class="opening-times__list">
+        {% for row in ot.bar.hours %}
+          <li>
+            <strong>
+              {% if row.label %}{{ row.label | escape }}{% else %}{{ row.days | escape }}{% endif %}:
+            </strong>
+            {{ row.open }}–{{ row.close }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  {%- if ctx == "all" or ctx == "food" or ctx == "food_lunch" -%}
+    {%- if ctx == "all" or ctx == "food" or ctx == "food_lunch" -%}
+      <div class="opening-times__block">
+        <h3 class="opening-times__heading">Lunch</h3>
+        <ul class="opening-times__list">
+          {% for row in ot.food.lunch.hours %}
+          <li>
+            <strong>
+              {% if row.label %}{{ row.label | escape }}{% else %}{{ row.days | escape }}{% endif %}:
+            </strong>
+            {{ row.open }}–{{ row.close }}
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- if ctx == "all" or ctx == "food" or ctx == "food_evening" -%}
+    <div class="opening-times__block">
+      <h3 class="opening-times__heading">Evening Menu</h3>
+      <ul class="opening-times__list">
+        {% for row in ot.food.evening.hours %}
+          <li>
+            <strong>
+              {% if row.label %}{{ row.label | escape }}{% else %}{{ row.days | escape }}{% endif %}:
+            </strong>
+            {{ row.open }}–{{ row.close }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {%- endif -%}
+
+  {%- if ctx == "all" or ctx == "food" or ctx == "food_sunday" -%}
+    <div class="opening-times__block">
+      <h3 class="opening-times__heading">Sunday Roast</h3>
+      <ul class="opening-times__list">
+        {% for row in ot.food.sunday_roast.hours %}
+          <li>
+            <strong>
+              {% if row.label %}{{ row.label | escape }}{% else %}{{ row.days | escape }}{% endif %}:
+            </strong>
+            {{ row.open }}–{{ row.close }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {%- endif -%}
+</section>

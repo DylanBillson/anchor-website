@@ -1,0 +1,72 @@
+{%- assign tag_colors = site.data.events.tag_colors -%}
+
+<section class="events" data-events>
+  <div class="events__controls" aria-label="Event filters">
+    <div class="events__controls-left">
+      <button type="button" class="events__filter is-active" data-filter="all">
+        All
+      </button>
+      <div class="events__filter-wrap" data-filter-buttons>
+        <!-- JS will populate tag buttons here -->
+      </div>
+    </div>
+
+    <div class="events__controls-right">
+      <label class="sr-only" for="events-search">Search events</label>
+      <input id="events-search" type="text" placeholder="Search…" data-events-search />
+    </div>
+  </div>
+
+  <div class="events__grid" data-events-grid>
+    {%- for ev in site.data.events.events -%}
+      <article
+        class="event-card"
+        data-event
+        data-title="{{ ev.title | escape }}"
+        data-description="{{ ev.description | escape }}"
+        data-date="{{ ev.date | escape }}"
+        data-time="{{ ev.time | default: '' | escape }}"
+        data-pinned="{{ ev.pinned | default: false }}"
+        data-tags="{% if ev.tags %}{{ ev.tags | join: '|' | escape }}{% endif %}"
+      >
+        <header class="event-card__header">
+          <h3 class="event-card__title">
+            {% if ev.link_url and ev.link_url != "" %}
+              <a href="{{ ev.link_url | escape }}" target="_blank" rel="noopener">{{ ev.title | escape }}</a>
+            {% else %}
+              {{ ev.title | escape }}
+            {% endif %}
+          </h3>
+
+          <p class="event-card__date" data-event-date>
+            <!-- JS will format -->
+            {{ ev.date | escape }}{% if ev.time and ev.time != "" %} • {{ ev.time | escape }}{% endif %}
+          </p>
+        </header>
+
+        {% if ev.poster_url and ev.poster_url != "" %}
+          <img class="event-card__poster" src="{{ ev.poster_url | escape }}" alt="" loading="lazy" decoding="async" />
+        {% endif %}
+
+        {% if ev.description %}
+          <p class="event-card__desc">{{ ev.description | escape }}</p>
+        {% endif %}
+
+        {% if ev.tags and ev.tags.size > 0 %}
+          <div class="event-card__tags" aria-label="Event tags">
+            {% for t in ev.tags %}
+              {%- assign tcolor = tag_colors[t] -%}
+              <span class="event-tag" {% if tcolor %}style="--tag-color: {{ tcolor | escape }}"{% endif %}>
+                {{ t | escape }}
+              </span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </article>
+    {%- endfor -%}
+  </div>
+
+  <p class="events__empty" data-events-empty hidden>
+    <em>No upcoming events match your filters.</em>
+  </p>
+</section>

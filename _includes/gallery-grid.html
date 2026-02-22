@@ -1,0 +1,62 @@
+{%- assign tag_colors = site.data.gallery.tag_colors -%}
+
+<section class="gallery" data-gallery>
+  <div class="gallery__controls" aria-label="Gallery filters">
+    <div class="gallery__controls-left">
+      <button type="button" class="gallery__filter is-active" data-filter="all">All</button>
+      <div class="gallery__filter-wrap" data-filter-buttons></div>
+    </div>
+
+    <div class="gallery__controls-right">
+      <label class="sr-only" for="gallery-search">Search gallery</label>
+      <input id="gallery-search" type="text" placeholder="Search…" data-gallery-search />
+    </div>
+  </div>
+
+  <div class="gallery__grid" data-gallery-grid>
+    {%- for it in site.data.gallery.items -%}
+      <article
+        class="gallery-card"
+        data-item
+        data-title="{{ it.title | escape }}"
+        data-date="{{ it.date | escape }}"
+        data-type="{{ it.type | escape }}"
+        data-pinned="{{ it.pinned | default: false }}"
+        data-tags="{% if it.tags %}{{ it.tags | join: '|' | escape }}{% endif %}"
+        data-media-url="{{ it.media_url | escape }}"
+        data-thumb-url="{{ it.thumb_url | default: '' | escape }}"
+      >
+        <div class="gallery-card__media" data-media>
+          <!-- JS will render image/video appropriately -->
+          <noscript>
+            {% if it.type == "image" %}
+              <img src="{{ it.media_url | escape }}" alt="{{ it.title | escape }}" loading="lazy" decoding="async" />
+            {% else %}
+              <a href="{{ it.media_url | escape }}" target="_blank" rel="noopener">View video</a>
+            {% endif %}
+          </noscript>
+        </div>
+
+        <div class="gallery-card__content">
+          <h3 class="gallery-card__title">{{ it.title | escape }}</h3>
+          <p class="gallery-card__date" data-date-label>{{ it.date | escape }}</p>
+
+          {% if it.tags and it.tags.size > 0 %}
+            <div class="gallery-card__tags" aria-label="Gallery tags">
+              {% for t in it.tags %}
+                {%- assign tcolor = tag_colors[t] -%}
+                <span class="gallery-tag" {% if tcolor %}style="--tag-color: {{ tcolor | escape }}"{% endif %}>
+                  {{ t | escape }}
+                </span>
+              {% endfor %}
+            </div>
+          {% endif %}
+        </div>
+      </article>
+    {%- endfor -%}
+  </div>
+
+  <p class="gallery__empty" data-gallery-empty hidden>
+    <em>No gallery items match your filters.</em>
+  </p>
+</section>

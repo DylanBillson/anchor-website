@@ -1,0 +1,8 @@
+special:
+  enabled: false
+  title: "Special menu"
+  text: "Add your special menu description here."
+  poster_image: "/assets/img/menus/special-poster.jpg"
+  poster_alt: "Special menu poster"
+  button_text: ""
+  button_url: ""
