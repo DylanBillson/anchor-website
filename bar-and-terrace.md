@@ -6,8 +6,6 @@ hero_alt: "The Anchor Inn bar area"
 intro: "A relaxed village bar with good drinks, classic pub games, and a terrace for sunny days."
 ---
 
-## Opening times
-
 {% include opening-times.html context="bar" %}
 
 ---
