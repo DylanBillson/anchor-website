@@ -10,7 +10,7 @@ intro: "A traditional village pub in the heart of Hartland — welcoming locals,
 
 The Anchor Inn sits on Fore Street in the centre of Hartland, a village shaped by the coast, countryside, and community around it.
 
-We are proud to be a traditional village pub — somewhere you can enjoy a proper meal, a good drink, live music, and the kind of atmosphere that feels relaxed and unpretentious.
+We are proud to be a traditional village pub, somewhere you can enjoy a proper meal, a good drink, live music, and the kind of atmosphere that feels relaxed and unpretentious.
 
 Whether you’re here after a long walk along the South West Coast Path, meeting friends for Sunday Roast, or staying the night in one of our rooms, we aim to make you feel at home.
 
@@ -35,18 +35,17 @@ Our kitchen serves lunch and evening menus through the week, with Sunday Roasts 
 
 Behind the bar you’ll find a carefully selected range of drinks, alongside darts, pool, and a sun terrace for warmer days.
 
-We regularly host live music and events — see our **What’s On** page for upcoming dates.
+We regularly host live music and events, see our **What’s On** page for upcoming dates.
 
 ---
 
 ## Amenities & Services
 
-- Village bar with darts and pool  
-- Sun terrace  
-- Two pianos  
+- Bar with darts and pool  
+- Sun terrace 
 - Regular live events  
-- Rooms available to book directly  
-- Support for walkers (packed lunches and practical help on request)
+- Rooms 
+- Support for walkers (packed lunches, lifts and practical help on request)
 
 ---
 
@@ -54,8 +53,5 @@ We regularly host live music and events — see our **What’s On** page for upc
 
 The Anchor Inn is owned by Riding To The Anchor Inn Limited and is part of the Galassify family.
 
-While firmly rooted in Hartland, we are supported by a wider group that values long-term sustainability, community spaces, and thoughtful hospitality.
+While firmly rooted in Hartland, we are supported by a wider group that values long-term sustainability, community, and people first solutions.
 
----
-
-We look forward to welcoming you.

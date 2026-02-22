@@ -25,8 +25,6 @@ intro: "Lunch and evening menus through the week, with Sunday Roasts on Sundays.
 
 ---
 
-## Kitchen opening times
-
 {% include opening-times.html context="food" %}
 
 ---
