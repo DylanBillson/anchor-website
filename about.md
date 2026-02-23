@@ -3,7 +3,7 @@ title: "About"
 description: "The Anchor Inn’s history, values and what to expect when you visit our village pub in Hartland."
 hero_image: /assets/img/hero/anchor-hero-about-temp.png
 hero_alt: "Inside The Anchor Inn bar area"
-intro: "A traditional village pub in the heart of Hartland — welcoming locals, walkers and visitors alike."
+intro: "A traditional village pub in the heart of Hartland, welcoming locals, walkers and visitors alike."
 ---
 
 ## Our Story
@@ -25,7 +25,7 @@ We believe in:
 - Supporting the local community  
 - Creating a space where visitors and locals mix naturally  
 
-The Anchor is not about being flashy — it’s about being reliable, friendly, and genuinely enjoyable to spend time in.
+The Anchor is not about being flashy, it’s about being reliable, friendly, and genuinely enjoyable to spend time in.
 
 ---
 

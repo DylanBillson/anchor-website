@@ -14,7 +14,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
 
 <div class="two-col two-col--top">
   <div>
-    <p>The Anchor’s bar is a place to settle in — whether you’re calling in for a quick pint, meeting friends for an evening, or warming up after a walk.</p>
+    <p>The Anchor’s bar is a place to settle in, whether you’re calling in for a quick pint, meeting friends for an evening, or warming up after a walk.</p>
     <p>We aim to keep things simple: a friendly atmosphere, a well-kept selection behind the bar, and a space that feels welcoming to locals and visitors alike.</p>
   </div>
   <div>
@@ -28,7 +28,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
 
 <div class="two-col two-col--top">
   <div>
-    <p>On warmer days, our terrace is the perfect spot for a drink — especially in the afternoon and early evening.</p>
+    <p>On warmer days, our terrace is the perfect spot for a drink, especially in the afternoon and early evening.</p>
     <p>It’s a relaxed outdoor space where you can unwind, catch up, and enjoy the village atmosphere.</p>
   </div>
   <div>
