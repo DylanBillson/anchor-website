@@ -9,13 +9,35 @@
         <h2 class="site-footer__heading">Newsletter</h2>
         <p class="site-footer__text">Occasional updates on menus, events, and news from The Anchor.</p>
 
-        <form class="site-footer__form" action="#" method="post">
+        <form method="post"
+              action="https://newsletters.galassify.co.uk/subscription/form"
+              class="listmonk-form"
+              target="_blank"
+              rel="noopener">
+
+          <input type="hidden" name="nonce" />
+          <input type="hidden" name="l" value="2177995a-79d1-423f-bd07-c796f6d0f2f6" />
+
+          <!-- Hidden name field -->
+          <input type="hidden" name="name" id="newsletter-name" />
+
           <div class="site-footer__form-row">
             <label class="sr-only" for="newsletter-email">Email address</label>
-            <input id="newsletter-email" type="email" name="email" placeholder="Email address" />
+            <input id="newsletter-email"
+                  type="email"
+                  name="email"
+                  required
+                  placeholder="Email address"
+                  autocomplete="email" />
+
             <button type="submit">Sign up</button>
           </div>
+
+          <p class="site-footer__small site-footer__small--muted">
+            We’ll only email occasionally. Unsubscribe anytime.
+          </p>
         </form>
+
       </div>
     </div>
 

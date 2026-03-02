@@ -98,3 +98,25 @@
     }
   });
 })();
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".listmonk-form");
+  if (!form) return;
+
+  const emailInput = form.querySelector('input[name="email"]');
+  const nameInput = form.querySelector('input[name="name"]');
+
+  form.addEventListener("submit", function () {
+    if (!emailInput || !nameInput) return;
+
+    const email = emailInput.value.trim();
+    if (!email.includes("@")) return;
+
+    let namePart = email.split("@")[0];
+
+    // Optional: make it slightly nicer (remove dots/underscores, capitalise first letter)
+    namePart = namePart.replace(/[._-]+/g, " ");
+    namePart = namePart.charAt(0).toUpperCase() + namePart.slice(1);
+
+    nameInput.value = namePart;
+  });
+});
