@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mailform Test</title>
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif; margin: 24px; max-width: 720px; }
+    label { display:block; margin: 12px 0 6px; font-weight: 600; }
+    input, textarea { width: 100%; padding: 10px; font-size: 16px; }
+    textarea { min-height: 140px; }
+    button { margin-top: 14px; padding: 10px 14px; font-size: 16px; cursor: pointer; }
+    .msg { margin-top: 14px; padding: 12px; border-radius: 10px; display:none; }
+    .ok { background: #e8f7ee; }
+    .err { background: #fdeaea; }
+    .row { display:flex; gap: 12px; }
+    .row > div { flex: 1; }
+  </style>
+
+  <!-- Cap widget (pin a version in production) -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@cap.js/widget@0.1.34"></script>
+  <!-- If you later want “latest”, remove @0.1.34 (but pinning avoids surprise breaks). -->
+</head>
+
+<body>
+  <h1>Mailform + Cap.js Test</h1>
+
+  <form id="contactForm">
+    <label for="from">Your email (from)</label>
+    <input id="from" name="from" type="email" placeholder="you@example.com" required />
+
+    <label for="subject">Subject</label>
+    <input id="subject" name="subject" type="text" placeholder="Test message" required />
+
+    <label for="body">Message</label>
+    <textarea id="body" name="body" placeholder="Hello from Anchor test form…" required></textarea>
+
+    <label>Captcha</label>
+    <cap-widget
+      id="cap"
+      data-cap-api-endpoint="https://captcha.galassify.co.uk/355f619e41/"
+      data-cap-hidden-field-name="h-captcha-response"
+    ></cap-widget>
+
+    <button id="submitBtn" type="submit">Send test</button>
+
+    <div id="okMsg" class="msg ok">Sent ✅ Check your inbox.</div>
+    <div id="errMsg" class="msg err"></div>
+  </form>
+
+  <script>
+    // CHANGE THIS:
+    const MAILFORM_ENDPOINT_URL = "https://mail.billson.info/anchor-billson";
+
+    const form = document.getElementById("contactForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const okMsg = document.getElementById("okMsg");
+    const errMsg = document.getElementById("errMsg");
+
+    function showOk() {
+      errMsg.style.display = "none";
+      okMsg.style.display = "block";
+    }
+    function showErr(text) {
+      okMsg.style.display = "none";
+      errMsg.textContent = text;
+      errMsg.style.display = "block";
+    }
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      okMsg.style.display = "none";
+      errMsg.style.display = "none";
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = "Sending…";
+
+      try {
+        // Use FormData (multipart/form-data) — Mailform’s README notes JSON can be problematic right now. :contentReference[oaicite:3]{index=3}
+        const fd = new FormData(form);
+
+        // Quick sanity: ensure captcha token exists
+        if (!fd.get("h-captcha-response")) {
+          throw new Error("Captcha not solved yet — please complete the captcha first.");
+        }
+
+        const res = await fetch(MAILFORM_ENDPOINT_URL, {
+          method: "POST",
+          body: fd,
+          // Don't set Content-Type manually with FormData.
+        });
+
+        if (!res.ok) {
+          const text = await res.text().catch(() => "");
+          throw new Error(`Mailform error (${res.status}). ${text}`.trim());
+        }
+
+        showOk();
+        form.reset();
+      } catch (err) {
+        showErr(err?.message || "Unknown error");
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Send test";
+      }
+    });
+  </script>
+</body>
+</html>
