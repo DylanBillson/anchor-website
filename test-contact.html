@@ -16,17 +16,13 @@
     .row { display:flex; gap: 12px; }
     .row > div { flex: 1; }
   </style>
-
-  <!-- Cap widget (pin a version in production) -->
-  <script type="module" src="https://cdn.jsdelivr.net/npm/@cap.js/widget@0.1.34"></script>
-  <!-- If you later want “latest”, remove @0.1.34 (but pinning avoids surprise breaks). -->
 </head>
 
 <body>
-  <h1>Mailform + Cap.js Test</h1>
+  <h1>Mailform Test</h1>
 
   <form id="contactForm">
-    <label for="from">Your email (from)</label>
+    <label for="from">Your email</label>
     <input id="from" name="from" type="email" placeholder="you@example.com" required />
 
     <label for="subject">Subject</label>
@@ -35,13 +31,6 @@
     <label for="body">Message</label>
     <textarea id="body" name="body" placeholder="Hello from Anchor test form…" required></textarea>
 
-    <label>Captcha</label>
-    <cap-widget
-      id="cap"
-      data-cap-api-endpoint="https://captcha.galassify.co.uk/355f619e41/"
-      data-cap-hidden-field-name="h-captcha-response"
-    ></cap-widget>
-
     <button id="submitBtn" type="submit">Send test</button>
 
     <div id="okMsg" class="msg ok">Sent ✅ Check your inbox.</div>
@@ -49,7 +38,7 @@
   </form>
 
   <script>
-    // CHANGE THIS:
+    // Set this to your NPM-hosted mailform URL:
     const MAILFORM_ENDPOINT_URL = "https://mail.billson.info/anchor-billson";
 
     const form = document.getElementById("contactForm");
@@ -76,18 +65,11 @@
       submitBtn.textContent = "Sending…";
 
       try {
-        // Use FormData (multipart/form-data) — Mailform’s README notes JSON can be problematic right now. :contentReference[oaicite:3]{index=3}
         const fd = new FormData(form);
-
-        // Quick sanity: ensure captcha token exists
-        if (!fd.get("h-captcha-response")) {
-          throw new Error("Captcha not solved yet — please complete the captcha first.");
-        }
 
         const res = await fetch(MAILFORM_ENDPOINT_URL, {
           method: "POST",
-          body: fd,
-          // Don't set Content-Type manually with FormData.
+          body: fd
         });
 
         if (!res.ok) {
