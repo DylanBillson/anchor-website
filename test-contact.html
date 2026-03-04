@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mailform Test</title>
+  <title>Mailform + hCaptcha Test</title>
   <style>
     body { font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif; margin: 24px; max-width: 720px; }
     label { display:block; margin: 12px 0 6px; font-weight: 600; }
@@ -15,21 +15,32 @@
     .err { background: #fdeaea; }
     .row { display:flex; gap: 12px; }
     .row > div { flex: 1; }
+    .captcha-wrap { margin-top: 10px; }
   </style>
+
+  <!-- hCaptcha -->
+  <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 
 <body>
-  <h1>Mailform Test</h1>
+  <h1>Mailform + hCaptcha Test</h1>
 
   <form id="contactForm">
-    <label for="from">Your email</label>
-    <input id="from" name="from" type="email" placeholder="you@example.com" required />
+    <label for="email">Your email</label>
+    <input id="email" name="email" type="email" placeholder="you@example.com" required />
 
     <label for="subject">Subject</label>
     <input id="subject" name="subject" type="text" placeholder="Test message" required />
 
-    <label for="body">Message</label>
-    <textarea id="body" name="body" placeholder="Hello from Anchor test form…" required></textarea>
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Hello from Anchor test form…" required></textarea>
+
+    <label>Captcha</label>
+    <div class="captcha-wrap">
+      <!-- IMPORTANT: data-sitekey is your hCaptcha SITE KEY -->
+      <div class="h-captcha" data-sitekey="14d48452-74be-4eac-8d00-a7f60d36243a"></div>
+      <!-- hCaptcha will automatically create a hidden input named "h-captcha-response" -->
+    </div>
 
     <button id="submitBtn" type="submit">Send test</button>
 
@@ -38,7 +49,7 @@
   </form>
 
   <script>
-    // Set this to your NPM-hosted mailform URL:
+    // Your Mailform endpoint (target file: targets/anchor-billson.json -> /anchor-billson)
     const MAILFORM_ENDPOINT_URL = "https://mail.billson.info/anchor-billson";
 
     const form = document.getElementById("contactForm");
@@ -61,6 +72,13 @@
       okMsg.style.display = "none";
       errMsg.style.display = "none";
 
+      // Validate captcha token exists before sending
+      const captchaToken = form.querySelector('textarea[name="h-captcha-response"]')?.value;
+      if (!captchaToken) {
+        showErr("Please complete the captcha first.");
+        return;
+      }
+
       submitBtn.disabled = true;
       submitBtn.textContent = "Sending…";
 
@@ -79,6 +97,9 @@
 
         showOk();
         form.reset();
+
+        // Reset hCaptcha widget so you can submit again
+        if (window.hcaptcha) window.hcaptcha.reset();
       } catch (err) {
         showErr(err?.message || "Unknown error");
       } finally {
