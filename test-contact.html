@@ -13,12 +13,9 @@
     .msg { margin-top: 14px; padding: 12px; border-radius: 10px; display:none; }
     .ok { background: #e8f7ee; }
     .err { background: #fdeaea; }
-    .row { display:flex; gap: 12px; }
-    .row > div { flex: 1; }
     .captcha-wrap { margin-top: 10px; }
   </style>
 
-  <!-- hCaptcha -->
   <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
 </head>
 
@@ -26,20 +23,20 @@
   <h1>Mailform + hCaptcha Test</h1>
 
   <form id="contactForm">
-    <label for="email">Your email</label>
-    <input id="email" name="email" type="email" placeholder="you@example.com" required />
+    <label for="from">Your email</label>
+    <input id="from" name="from" type="email" placeholder="you@example.com" required />
 
     <label for="subject">Subject</label>
     <input id="subject" name="subject" type="text" placeholder="Test message" required />
 
-    <label for="message">Message</label>
-    <textarea id="message" name="message" placeholder="Hello from Anchor test form…" required></textarea>
+    <label for="body">Message</label>
+    <!-- ✅ Mailform needs "body" -->
+    <textarea id="body" name="body" placeholder="Hello from Anchor test form…" required></textarea>
 
     <label>Captcha</label>
     <div class="captcha-wrap">
-      <!-- IMPORTANT: data-sitekey is your hCaptcha SITE KEY -->
       <div class="h-captcha" data-sitekey="14d48452-74be-4eac-8d00-a7f60d36243a"></div>
-      <!-- hCaptcha will automatically create a hidden input named "h-captcha-response" -->
+      <!-- hCaptcha auto-adds textarea[name="h-captcha-response"] -->
     </div>
 
     <button id="submitBtn" type="submit">Send test</button>
@@ -49,7 +46,6 @@
   </form>
 
   <script>
-    // Your Mailform endpoint (target file: targets/anchor-billson.json -> /anchor-billson)
     const MAILFORM_ENDPOINT_URL = "https://mail.billson.info/anchor-billson";
 
     const form = document.getElementById("contactForm");
@@ -72,7 +68,6 @@
       okMsg.style.display = "none";
       errMsg.style.display = "none";
 
-      // Validate captcha token exists before sending
       const captchaToken = form.querySelector('textarea[name="h-captcha-response"]')?.value;
       if (!captchaToken) {
         showErr("Please complete the captcha first.");
@@ -97,8 +92,6 @@
 
         showOk();
         form.reset();
-
-        // Reset hCaptcha widget so you can submit again
         if (window.hcaptcha) window.hcaptcha.reset();
       } catch (err) {
         showErr(err?.message || "Unknown error");
