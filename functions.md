@@ -18,9 +18,8 @@ We can help you plan something simple and enjoyable, with food and drinks option
 
 - A warm, welcoming village pub setting  
 - Flexible food options (from casual to more structured)  
-- Drinks packages and bar tabs (if helpful)  
 - Space for groups (subject to availability)  
-- A straightforward, friendly booking process  
+- A straightforward, friendly booking process
 
 If you’re not sure what you need yet, that’s fine, just tell us the basics (date, approximate numbers, and the type of event) and we’ll take it from there.
 
@@ -54,5 +53,5 @@ To help us respond quickly, include:
 - Preferred date and time  
 - Approximate number of people  
 - Any dietary requirements  
-- Whether you’d like food, drinks, or both  
+- Whether you’d like food
 - Any extra needs (accessibility, space for a cake, etc.)  

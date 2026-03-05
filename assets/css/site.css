@@ -1451,3 +1451,54 @@ select{
   margin: -4px 0 10px;
   color: var(--color-muted);
 }
+/* -------------------------
+   What's On posters section
+   ------------------------- */
+.poster-section{
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 18px;
+  margin-top: 18px;
+}
+
+.poster-section__title{
+  margin: 0 0 8px;
+}
+
+.poster-section__text{
+  margin: 0 0 14px;
+  color: var(--color-muted);
+}
+
+.poster-grid{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.poster-grid__link{
+  display: block;
+  text-decoration: none;
+}
+
+.poster-grid__img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  border: 1px solid var(--color-border);
+}
+
+.poster-grid__link:hover .poster-grid__img,
+.poster-grid__link:focus-visible .poster-grid__img{
+  outline: none;
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 899px){
+  .poster-grid{
+    grid-template-columns: 1fr; /* one poster at a time */
+  }
+}

@@ -9,6 +9,8 @@ js: [events]
 
 {% include whats-on-highlight.html %}
 
+{% include whats-on-posters-grid.html %}
+
 ## Upcoming events
 
 {% include events-grid.html %}
