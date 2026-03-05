@@ -23,7 +23,7 @@ events:
     link_url: ""     # optional external link
 
   - title: "Anchor Community Shanty Choir"
-    description: "Led by Scallywag Harrison Wallace: all welcome."
+    description: "Led by Scallywag Harrison Wallace. All welcome."
     date: "2026-03-10"
     time: "19:00 - 21:00"
     pinned: false
@@ -32,7 +32,7 @@ events:
     link_url: ""
 
   - title: "Anchor Community Shanty Choir"
-    description: "Led by Scallywag Harrison Wallace: all welcome."
+    description: "Led by Scallywag Harrison Wallace. All welcome."
     date: "2026-03-17"
     time: "19:00 - 21:00"
     pinned: false
@@ -41,7 +41,7 @@ events:
     link_url: ""
 
   - title: "Anchor Community Shanty Choir"
-    description: "Led by Scallywag Harrison Wallace: all welcome."
+    description: "Led by Scallywag Harrison Wallace. All welcome."
     date: "2026-03-24"
     time: "19:00 - 21:00"
     pinned: false
@@ -50,7 +50,7 @@ events:
     link_url: ""
 
   - title: "Anchor Community Shanty Choir"
-    description: "Led by Scallywag Harrison Wallace: all welcome."
+    description: "Led by Scallywag Harrison Wallace. All welcome."
     date: "2026-03-31"
     time: "19:00 - 21:00"
     pinned: false
@@ -104,7 +104,7 @@ events:
     link_url: ""
 
   - title: "Book Club"
-    description: "Call Ann on 01237 441414 for more information."
+    description: "Discussion of 'The Turning of the Tide' by local author Liz Shakespeare. Call Ann on 01237 441414 for more information."
     date: "2026-03-26"
     time: "19:30"
     pinned: false
@@ -133,7 +133,7 @@ events:
   - title: "Amanita Grove"
     description: "Latin, Folk, Neo-Soul inspired duo with vocals, percussion, Spanish guitar, loops & lo-fi rhythms."
     date: "2026-03-15"
-    time: "20:00"
+    time: "17:00 - 19:00"
     pinned: false
     tags: ["Anchor Waves Weekend", "Music"]
     poster_url: ""
@@ -142,7 +142,7 @@ events:
   - title: "Mothers Day Special Menu"
     description: "View the menu on our website or in the Anchor. Booking essential."
     date: "2026-03-15"
-    time: ""
+    time: "12:00 - 18:00"
     pinned: false
     tags: ["Special Menus"]
     poster_url: ""
@@ -185,9 +185,9 @@ events:
     link_url: ""
 
   - title: "The Anchor Quiz"
-    description: "with subs and raffles going to charity"
+    description: "with subs and raffles going to the charity Dartington Service Design"
     date: "2026-03-03"
-    time: "10:30"
+    time: "17:30"
     pinned: false
     tags: ["Quiz"]
     poster_url: ""
@@ -211,8 +211,8 @@ events:
     poster_url: ""
     link_url: ""
 
-  - title: "Rich & Friends"
-    description: "Temp description"
+  - title: "Richard Malfait & Friends"
+    description: "Playing home grown songs about all sorts of folk and all sorts of stuff. Stories from the beaches, river banks, fairgrounds and moors of North Devon."
     date: "2026-03-22"
     time: "17:00 - 19:00"
     pinned: false
@@ -226,5 +226,14 @@ events:
     time: "19:00"
     pinned: false
     tags: ["Community"]
+    poster_url: ""
+    link_url: ""
+
+  - title: "The Sound Lounge"
+    description: "With members of the Evolving Events CIC. Bring a poem, song, instrument, anecdote or object related to the theme: Awakening"
+    date: "2026-03-22"
+    time: "15:00 - 16:30"
+    pinned: false
+    tags: ["music"]
     poster_url: ""
     link_url: ""
