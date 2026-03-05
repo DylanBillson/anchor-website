@@ -50,3 +50,290 @@ items:
     tags: ["Gig"]
     media_url: "https://www.youtube.com/watch?v=TNxlSn55o6c"
     thumb_url: "/assets/img/gallery/maddie-storvold-amy.jpg"
+    
+  - title: "9 Yards"
+    date: "2022-05-14"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/9-yards-2022-05-14.webp"
+
+  - title: "Alberts Authentics"
+    date: "2024-06-09"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/alberts-authentics-2024-06-09.webp"
+
+  - title: "Amanita Grove"
+    date: "2024-12-22"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/amanita-grove-2024-12-22.webp"
+
+  - title: "Basils Balls Up Band"
+    date: "2024-05-19"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/basils-balls-up-band-2024-05-19.webp"
+
+  - title: "Bell & The Boys"
+    date: "2024-07-14"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/bell-&-the-boys-2024-07-14.webp"
+
+  - title: "Ben Banford"
+    date: "2024-04-14"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/ben-banford-2024-04-14.webp"
+
+  - title: "Big Dog Boogie Band"
+    date: "2024-07-28"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/big-dog-boogie-band-2024-07-28.webp"
+
+  - title: "Blue Honey"
+    date: "2024-09-15"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/blue-honey-2024-09-15.webp"
+
+  - title: "Cat Elliott"
+    date: "2023-09-18"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/cat-elliott-2023-09-18.webp"
+
+  - title: "Chris Standford"
+    date: "2024-02-25"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/chris-standford-2024-02-25.webp"
+
+  - title: "David Celia & Zuffalo"
+    date: "2024-05-12"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/david-celia-&-zuffalo-2024-05-12.webp"
+
+  - title: "David Celia And Co"
+    date: "2024-11-09"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/david-celia-and-co-2024-11-09.webp"
+
+  - title: "Difuzed"
+    date: "2023-06-08"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/difuzed-2023-06-08.webp"
+
+  - title: "Directors Cut"
+    date: "2024-11-24"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/directors-cut-2024-11-24.webp"
+
+  - title: "Dogleg"
+    date: "2024-11-17"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/dogleg-2024-11-17.webp"
+
+  - title: "Dragonflies"
+    date: "2023-10-30"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/dragonflies-2023-10-30.webp"
+
+  - title: "Harrison Wallace"
+    date: "2024-01-28"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/harrison-wallace-2024-01-28.webp"
+
+  - title: "Henry Hassell"
+    date: "2023-11-12"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/henry-hassell-2023-11-12.webp"
+
+  - title: "Hoodoos"
+    date: "2024-10-20"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/hoodoos-2024-10-20.webp"
+
+  - title: "Ja La Blu"
+    date: "2023-11-28"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/ja-la-blu-2023-11-28.webp"
+
+  - title: "Jack Dayman"
+    date: "2024-08-18"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/jack-dayman-2024-08-18.webp"
+
+  - title: "Jacob Terry"
+    date: "2024-06-15"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/jacob-terry-2024-06-15.webp"
+
+  - title: "Jacob Terry"
+    date: "2024-06-16"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/jacob-terry-2024-06-16.webp"
+
+  - title: "Jacob Terry"
+    date: "2024-11-10"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/jacob-terry-2024-11-10.webp"
+
+  - title: "Madelyn Read"
+    date: "2024-10-06"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/madelyn-read-2024-10-06.webp"
+
+  - title: "Mal Webb & Kylie Morrigan"
+    date: "2024-07-21"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/mal-webb-&-kylie-morrigan-2024-07-21.webp"
+
+  - title: "Mary And The Medics"
+    date: "2023-02-18"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/mary-and-the-medics-2023-02-18.webp"
+
+  - title: "Matt Bowen"
+    date: "2024-06-30"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/matt-bowen-2024-06-30.webp"
+
+  - title: "Nothing But Treble"
+    date: "2024-10-27"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/nothing-but-treble-2024-10-27.webp"
+
+  - title: "Red"
+    date: "2022-04-02"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/red-2022-04-02.webp"
+
+  - title: "Rhys Wynne Jones"
+    date: "2024-12-29"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/rhys-wynne-jones-2024-12-29.webp"
+
+  - title: "Sam Dowden"
+    date: "2024-09-29"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/sam-dowden-2024-09-29.webp"
+
+  - title: "Steve Ruffe"
+    date: "2022-09-25"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/steve-ruffe-2022-09-25.webp"
+
+  - title: "Tamsin Ball"
+    date: "2025-02-10"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/tamsin-ball-2025-02-10.webp"
+
+  - title: "Taylor Latham"
+    date: "2024-03-10"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/taylor-latham-2024-03-10.webp"
+
+  - title: "Tettie"
+    date: "2024-04-28"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/tettie-2024-04-28.webp"
+
+  - title: "Tracy V"
+    date: "2023-11-28"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/tracy-v-2023-11-28.webp"
+
+  - title: "Ventura"
+    date: "2022-10-16"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/ventura-2022-10-16.webp"
+
+  - title: "Westerly 5 Or 6"
+    date: "2023-05-24"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/westerly-5-or-6-2023-05-24.webp"
+
+  - title: "Yazzy"
+    date: "2024-03-31"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/yazzy-2024-03-31.webp"
+
+  - title: "Yazzy"
+    date: "2024-08-11"
+    type: "image"
+    pinned: false
+    tags: ["Gig"]
+    media_url: "/assets/img/gallery/yazzy-2024-08-11.webp"
