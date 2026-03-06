@@ -16,7 +16,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
   <div>
     <p>The Anchor’s bar is a place to settle in, whether you’re calling in for a quick pint, meeting friends for an evening, or warming up after a walk.</p>
     <p>We aim to keep things simple: a friendly atmosphere, a well-kept selection behind the bar, and a space that feels welcoming to locals and visitors alike.</p>
-    <p>We offer a comprehensive range of real ales, lagers, ciders, wines and spirits with guest and local ales and spirits regularly featured<p>
+    <p>We offer a comprehensive range of real ales, lagers, ciders, wines and spirits with guest and local ales and spirits regularly featured</p>
   </div>
   <div>
     <img src="/assets/img/the-bar.png" alt="Inside The Anchor Inn bar" loading="lazy" decoding="async" />
