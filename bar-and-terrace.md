@@ -56,14 +56,16 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
 ## Amenities
 
 <div class="two-col two-col--top">
-  <ul>
-    <li>Darts</li>
-    <li>Pool table</li>
-    <li>Board games</li>
-    <li>Comfortable seating areas</li>
-    <li>Sun terrace</li>
-  </ul>
-  <p>Our pool table is considered to be one of the best in the local league, and is free to use</p>
+  <div>
+    <ul>
+      <li>Darts</li>
+      <li>Pool table</li>
+      <li>Board games</li>
+      <li>Comfortable seating areas</li>
+      <li>Sun terrace</li>
+    </ul>
+    <p>Our pool table is considered to be one of the best in the local league, and is free to use</p>
+  </div>
   <div>
     <img src="/assets/img/amenities.png" alt="The Anchor Inn Pool Table" loading="lazy" decoding="async" />
   </div>
