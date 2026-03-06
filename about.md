@@ -8,9 +8,9 @@ intro: "A traditional village pub in the heart of Hartland, welcoming locals, wa
 
 ## Our Story
 
-The Anchor Inn sits on Fore Street in the centre of Hartland, a village shaped by the coast, countryside, and community around it.
+The Anchor is a 16th century inn located in Hartland, North Devon, with pub, restaurant, hotel and dog-friendly bar.
 
-We are proud to be a traditional village pub, somewhere you can enjoy a proper meal, a good drink, live music, and the kind of atmosphere that feels relaxed and unpretentious.
+It is the ideal location, whether you are seeking peace and quiet, or an invigorating walk along the nearby coast path. The Anchor is somewhere you can enjoy a proper meal, a good drink, live music, and the kind of atmosphere that feels relaxed and unpretentious.
 
 Whether you’re here after a long walk along the South West Coast Path, meeting friends for Sunday Roast, or staying the night in one of our rooms, we aim to make you feel at home.
 
@@ -21,17 +21,18 @@ Whether you’re here after a long walk along the South West Coast Path, meeting
 We believe in:
 
 - Quality ingredients, cooked well  
-- A warm and welcoming environment  
+- A warm and welcoming environment where everyone is equal
 - Supporting the local community  
-- Creating a space where visitors and locals mix naturally  
+- Creating a space where visitors and locals mix naturally
+- Genuine sustainability
 
-The Anchor is not about being flashy, it’s about being reliable, friendly, and genuinely enjoyable to spend time in.
+The Anchor is not about being flashy, it’s about being reliable, friendly, and a genuine joy to spend time in.
 
 ---
 
 ## Food, Drink & Community
 
-Our kitchen serves lunch and evening menus through the week, with Sunday Roasts at the weekend.
+Our kitchen serves lunch and evening menus through the week, with Roasts on Sunday.
 
 Behind the bar you’ll find a carefully selected range of drinks, alongside darts, pool, and a sun terrace for warmer days.
 
@@ -46,6 +47,7 @@ We regularly host live music and events, see our **What’s On** page for upcomi
 - Regular live events  
 - Rooms 
 - Support for walkers (packed lunches, lifts and practical help on request)
+- Free WIFI
 
 ---
 

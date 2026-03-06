@@ -142,7 +142,7 @@ events:
   - title: "Mothers Day Special Menu"
     description: "View the menu on our website or in the Anchor. Booking essential."
     date: "2026-03-15"
-    time: "12:00 - 18:00"
+    time: "12:00 - 20:30"
     pinned: false
     tags: ["Special Menus"]
     poster_url: ""
@@ -187,7 +187,7 @@ events:
   - title: "The Anchor Quiz"
     description: "with subs and raffles going to the charity Dartington Service Design"
     date: "2026-03-03"
-    time: "17:30"
+    time: "19:30"
     pinned: false
     tags: ["Quiz"]
     poster_url: ""
@@ -232,7 +232,7 @@ events:
   - title: "The Sound Lounge"
     description: "With members of the Evolving Events CIC. Bring a poem, song, instrument, anecdote or object related to the theme: Awakening"
     date: "2026-03-22"
-    time: "15:00 - 16:30"
+    time: "15:30 - 17:00"
     pinned: false
     tags: ["music"]
     poster_url: ""
