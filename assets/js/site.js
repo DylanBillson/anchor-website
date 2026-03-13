@@ -120,3 +120,45 @@ document.addEventListener("DOMContentLoaded", function () {
     nameInput.value = namePart;
   });
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("anchor-contact-form");
+  if (!form) return;
+
+  form.addEventListener("submit", function (event) {
+    const name = document.getElementById("contact-name")?.value.trim() || "";
+    const email = document.getElementById("contact-email")?.value.trim() || "";
+    const phone = document.getElementById("contact-phone")?.value.trim() || "";
+    const subjectChoice = document.getElementById("contact-subject-select")?.value.trim() || "";
+    const message = document.getElementById("contact-message")?.value.trim() || "";
+
+    if (!name || !email || !subjectChoice || !message) {
+      return;
+    }
+
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, "0");
+    const dd = String(now.getDate()).padStart(2, "0");
+    const dateString = `${yyyy}-${mm}-${dd}`;
+
+    const subjectField = document.getElementById("contact-mail-subject");
+    const bodyField = document.getElementById("contact-mail-body");
+
+    if (!subjectField || !bodyField) {
+      event.preventDefault();
+      return;
+    }
+
+    subjectField.value = `website form - ${name} - ${dateString} - ${subjectChoice}`;
+
+    const bodyLines = [
+      `Name - ${name}`,
+      `Email - ${email}`,
+      `Phone - ${phone || "Not provided"}`,
+      `Subject - ${subjectChoice}`,
+      `Message - ${message}`
+    ];
+
+    bodyField.value = bodyLines.join("\n");
+  });
+});
