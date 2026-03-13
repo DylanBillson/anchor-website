@@ -1502,3 +1502,48 @@ select{
     grid-template-columns: 1fr; /* one poster at a time */
   }
 }
+.contact-form__status {
+  margin-top: 12px;
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.contact-popup[hidden] {
+  display: none;
+}
+
+.contact-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+}
+
+.contact-popup__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.contact-popup__panel {
+  position: relative;
+  z-index: 1;
+  max-width: 520px;
+  margin: 10vh auto 0;
+  background: #fff;
+  color: var(--color-text);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.contact-popup__panel h2 {
+  margin-top: 0;
+}
+
+.contact-popup__close {
+  margin-top: 12px;
+}
+
+.has-contact-popup {
+  overflow: hidden;
+}

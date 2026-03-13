@@ -124,14 +124,62 @@ document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("anchor-contact-form");
   if (!form) return;
 
-  form.addEventListener("submit", function (event) {
+  const submitButton = document.getElementById("contact-submit-button");
+  const statusEl = document.getElementById("contact-form-status");
+  const popup = document.getElementById("contact-popup");
+
+  const openPopup = () => {
+    if (!popup) return;
+    popup.hidden = false;
+    document.body.classList.add("has-contact-popup");
+  };
+
+  const closePopup = () => {
+    if (!popup) return;
+    popup.hidden = true;
+    document.body.classList.remove("has-contact-popup");
+  };
+
+  popup?.addEventListener("click", function (event) {
+    if (event.target.matches("[data-contact-popup-close]")) {
+      closePopup();
+    }
+  });
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && popup && !popup.hidden) {
+      closePopup();
+    }
+  });
+
+  form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
     const name = document.getElementById("contact-name")?.value.trim() || "";
     const email = document.getElementById("contact-email")?.value.trim() || "";
     const phone = document.getElementById("contact-phone")?.value.trim() || "";
     const subjectChoice = document.getElementById("contact-subject-select")?.value.trim() || "";
     const message = document.getElementById("contact-message")?.value.trim() || "";
+    const subjectField = document.getElementById("contact-mail-subject");
+    const bodyField = document.getElementById("contact-mail-body");
 
-    if (!name || !email || !subjectChoice || !message) {
+    if (!name || !email || !subjectChoice || !message || !subjectField || !bodyField) {
+      if (statusEl) {
+        statusEl.hidden = false;
+        statusEl.textContent = "Please complete all required fields.";
+      }
+      return;
+    }
+
+    const captchaResponse = form.querySelector('textarea[name="h-captcha-response"]')?.value ||
+      form.querySelector('input[name="h-captcha-response"]')?.value ||
+      "";
+
+    if (!captchaResponse) {
+      if (statusEl) {
+        statusEl.hidden = false;
+        statusEl.textContent = "Please complete the captcha.";
+      }
       return;
     }
 
@@ -141,24 +189,60 @@ document.addEventListener("DOMContentLoaded", function () {
     const dd = String(now.getDate()).padStart(2, "0");
     const dateString = `${yyyy}-${mm}-${dd}`;
 
-    const subjectField = document.getElementById("contact-mail-subject");
-    const bodyField = document.getElementById("contact-mail-body");
-
-    if (!subjectField || !bodyField) {
-      event.preventDefault();
-      return;
-    }
-
     subjectField.value = `website form - ${name} - ${dateString} - ${subjectChoice}`;
 
-    const bodyLines = [
+    bodyField.value = [
       `Name - ${name}`,
       `Email - ${email}`,
       `Phone - ${phone || "Not provided"}`,
       `Subject - ${subjectChoice}`,
       `Message - ${message}`
-    ];
+    ].join("\r\n");
 
-    bodyField.value = bodyLines.join("\n");
+    const formData = new FormData();
+    formData.append("from", "dylan.billson@galassify.co.uk");
+    formData.append("subject", subjectField.value);
+    formData.append("body", bodyField.value);
+    formData.append("h-captcha-response", captchaResponse);
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Sending...";
+
+    if (statusEl) {
+      statusEl.hidden = true;
+      statusEl.textContent = "";
+    }
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData
+      });
+
+      if (!response.ok) {
+        let errorText = `Something went wrong (${response.status}). Please try again.`;
+        try {
+          const body = await response.text();
+          if (body) errorText = `Something went wrong. ${body}`;
+        } catch (_) {}
+        throw new Error(errorText);
+      }
+
+      form.reset();
+
+      if (window.hcaptcha && typeof window.hcaptcha.reset === "function") {
+        window.hcaptcha.reset();
+      }
+
+      openPopup();
+    } catch (error) {
+      if (statusEl) {
+        statusEl.hidden = false;
+        statusEl.textContent = error.message || "Something went wrong. Please try again.";
+      }
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = "Send message";
+    }
   });
 });
