@@ -1,12 +1,13 @@
 <div class="contact-form">
   <form
     class="contact-form__form"
-    action="https://mail.galassify.co.uk/testanchor"
+    action="https://mail.billson.info/testanchor"
     method="post"
     id="anchor-contact-form"
     novalidate
+    data-mailform-endpoint="https://mail.billson.info/testanchor"
+    data-cap-endpoint="https://captcha.galassify.co.uk/355f619e41/"
   >
-    <input type="hidden" name="from" value="dylan.billson@galassify.co.uk" />
     <input type="hidden" name="subject" id="contact-mail-subject" value="" />
     <input type="hidden" name="body" id="contact-mail-body" value="" />
 
@@ -44,10 +45,11 @@
       </div>
 
       <div class="contact-form__full">
-        <div
-          class="h-captcha"
-          data-sitekey="14d48452-74be-4eac-8d00-a7f60d36243a"
-        ></div>
+        <label>Captcha</label>
+        <cap-widget
+          id="anchor-contact-cap"
+          data-cap-api-endpoint="https://captcha.galassify.co.uk/355f619e41/"
+        ></cap-widget>
       </div>
     </div>
 

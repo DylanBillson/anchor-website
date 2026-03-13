@@ -127,6 +127,20 @@ document.addEventListener("DOMContentLoaded", function () {
   const submitButton = document.getElementById("contact-submit-button");
   const statusEl = document.getElementById("contact-form-status");
   const popup = document.getElementById("contact-popup");
+  const capWidget = document.getElementById("anchor-contact-cap");
+
+  const mailformEndpoint =
+    form.dataset.mailformEndpoint ||
+    form.getAttribute("action") ||
+    "";
+
+  const capEndpoint =
+    form.dataset.capEndpoint ||
+    "https://captcha.galassify.co.uk/355f619e41/";
+
+  if (capWidget && capWidget.getAttribute("data-cap-api-endpoint") !== capEndpoint) {
+    capWidget.setAttribute("data-cap-api-endpoint", capEndpoint);
+  }
 
   const openPopup = () => {
     if (!popup) return;
@@ -138,6 +152,23 @@ document.addEventListener("DOMContentLoaded", function () {
     if (!popup) return;
     popup.hidden = true;
     document.body.classList.remove("has-contact-popup");
+  };
+
+  const showStatus = (message) => {
+    if (!statusEl) return;
+    statusEl.hidden = false;
+    statusEl.textContent = message;
+  };
+
+  const clearStatus = () => {
+    if (!statusEl) return;
+    statusEl.hidden = true;
+    statusEl.textContent = "";
+  };
+
+  const getCapToken = () => {
+    const tokenField = form.querySelector('input[name="cap-token"], textarea[name="cap-token"]');
+    return tokenField ? tokenField.value.trim() : "";
   };
 
   popup?.addEventListener("click", function (event) {
@@ -152,6 +183,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  capWidget?.addEventListener("solve", function () {
+    clearStatus();
+  });
+
+  capWidget?.addEventListener("error", function () {
+    showStatus("Captcha error. Please try again.");
+  });
+
   form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -164,22 +203,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const bodyField = document.getElementById("contact-mail-body");
 
     if (!name || !email || !subjectChoice || !message || !subjectField || !bodyField) {
-      if (statusEl) {
-        statusEl.hidden = false;
-        statusEl.textContent = "Please complete all required fields.";
-      }
+      showStatus("Please complete all required fields.");
       return;
     }
 
-    const captchaResponse = form.querySelector('textarea[name="h-captcha-response"]')?.value ||
-      form.querySelector('input[name="h-captcha-response"]')?.value ||
-      "";
-
-    if (!captchaResponse) {
-      if (statusEl) {
-        statusEl.hidden = false;
-        statusEl.textContent = "Please complete the captcha.";
-      }
+    const capToken = getCapToken();
+    if (!capToken) {
+      showStatus("Please complete the captcha.");
       return;
     }
 
@@ -196,50 +226,45 @@ document.addEventListener("DOMContentLoaded", function () {
       `Email - ${email}`,
       `Phone - ${phone || "Not provided"}`,
       `Subject - ${subjectChoice}`,
-      `Message - ${message}`
+      "",
+      "Message:",
+      message
     ].join("\r\n");
 
     const formData = new FormData();
-    formData.append("from", "dylan.billson@galassify.co.uk");
+    formData.append("from", email);
     formData.append("subject", subjectField.value);
     formData.append("body", bodyField.value);
-    formData.append("h-captcha-response", captchaResponse);
+    formData.append("cap-token", capToken);
 
     submitButton.disabled = true;
     submitButton.textContent = "Sending...";
-
-    if (statusEl) {
-      statusEl.hidden = true;
-      statusEl.textContent = "";
-    }
+    clearStatus();
 
     try {
-      const response = await fetch(form.action, {
+      const response = await fetch(mailformEndpoint, {
         method: "POST",
         body: formData
       });
 
       if (!response.ok) {
         let errorText = `Something went wrong (${response.status}). Please try again.`;
+
         try {
-          const body = await response.text();
-          if (body) errorText = `Something went wrong. ${body}`;
+          const responseText = await response.text();
+          if (responseText) {
+            errorText = `Something went wrong. ${responseText}`;
+          }
         } catch (_) {}
+
         throw new Error(errorText);
       }
 
       form.reset();
-
-      if (window.hcaptcha && typeof window.hcaptcha.reset === "function") {
-        window.hcaptcha.reset();
-      }
-
+      clearStatus();
       openPopup();
     } catch (error) {
-      if (statusEl) {
-        statusEl.hidden = false;
-        statusEl.textContent = error.message || "Something went wrong. Please try again.";
-      }
+      showStatus(error.message || "Something went wrong. Please try again.");
     } finally {
       submitButton.disabled = false;
       submitButton.textContent = "Send message";
