@@ -14,3 +14,11 @@ highlights:
     poster_alt: "Festival poster"
     button_text: "View details"
     button_url: ""
+
+  - enabled: true
+    title: "Rich & Friends"
+    text: "'Rich and friends' are looking forward toplaying a gig of original folk songs from the North shore. Musical tales of lifeboats, kites and old Victorians, benches, treasure, wherryman pipes and rusty fairground lorries. Rich Malfait on songs, Ania Job on flute, Ant Parker on bass, Lara Conley guesting on bodhrán and songs"
+    poster_image: "/assets/img/events/rich-and-friends-march-2026.png"
+    poster_alt: "rich and friends poster march 2026"
+    button_text: "View details"
+    button_url: ""
