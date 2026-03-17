@@ -1626,39 +1626,109 @@ select{
   padding: 18px;
 }
 
+.cookie-preferences__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.cookie-preferences__copy {
+  max-width: 60ch;
+}
+
 .cookie-preferences__title {
   margin: 0 0 8px;
 }
 
 .cookie-preferences__text {
-  margin: 0 0 12px;
+  margin: 0 0 8px;
   color: var(--color-muted);
 }
 
+.cookie-preferences__hint {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
 .cookie-preferences__status {
-  margin: 0 0 14px;
-}
-
-.cookie-preferences__actions {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.cookie-preferences__button {
-  border-radius: 999px;
-  padding: 10px 14px;
-}
-
-.cookie-preferences__button--primary {
-  background: var(--color-primary);
-  color: var(--color-primary-contrast);
-}
-
-.cookie-preferences__button--secondary {
-  background: #fff;
+  margin: 14px 0 0;
   color: var(--color-text);
+}
+
+/* Switch */
+.cookie-switch {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  flex: 0 0 auto;
+}
+
+.cookie-switch:focus-visible {
+  outline: 3px solid rgba(67, 123, 147, 0.35);
+  outline-offset: 4px;
+  border-radius: 999px;
+}
+
+.cookie-switch__track {
+  position: relative;
+  width: 170px;
+  height: 52px;
+  border-radius: 999px;
+  background: #e8eaed;
   border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  transition: background 180ms ease, border-color 180ms ease;
+}
+
+.cookie-switch.is-on .cookie-switch__track {
+  background: color-mix(in srgb, var(--color-primary) 22%, white);
+  border-color: color-mix(in srgb, var(--color-primary) 35%, var(--color-border));
+}
+
+.cookie-switch__label {
+  position: relative;
+  z-index: 2;
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.cookie-switch__label--off {
+  color: var(--color-text);
+}
+
+.cookie-switch__label--on {
+  color: var(--color-text);
+}
+
+.cookie-switch__thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  transition: transform 180ms ease;
+}
+
+.cookie-switch.is-on .cookie-switch__thumb {
+  transform: translateX(118px);
+}
+
+@media (max-width: 899px) {
+  .cookie-preferences__row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 899px) {

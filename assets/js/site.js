@@ -276,7 +276,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const storageKey = cfg.storageKey || "anchor_cookie_consent";
 
   const banner = document.getElementById("cookie-banner");
-  const statusEl = document.getElementById("cookie-preferences-status");
+  const statusEl = document.getElementById("analytics-status");
+  const toggleEl = document.getElementById("analytics-toggle");
 
   const getConsent = () => {
     try {
@@ -286,30 +287,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   };
 
-  const setConsent = (value) => {
-    try {
-      localStorage.setItem(storageKey, value);
-    } catch (e) {}
-    updateConsentUI(value);
-
-    if (value === "accepted" && typeof window.loadAnchorMatomo === "function") {
-      window.loadAnchorMatomo();
-    }
-  };
-
   const updateConsentUI = (value) => {
+    const accepted = value === "accepted";
+
     if (banner) {
       banner.hidden = value === "accepted" || value === "rejected";
     }
 
+    if (toggleEl) {
+      toggleEl.setAttribute("aria-checked", accepted ? "true" : "false");
+      toggleEl.classList.toggle("is-on", accepted);
+    }
+
     if (statusEl) {
-      if (value === "accepted") {
-        statusEl.textContent = "Accepted";
-      } else if (value === "rejected") {
-        statusEl.textContent = "Rejected";
-      } else {
-        statusEl.textContent = "Not set";
-      }
+      statusEl.textContent = accepted
+        ? "Analytics are enabled."
+        : "Analytics are disabled.";
+    }
+  };
+
+  const setConsent = (value) => {
+    try {
+      localStorage.setItem(storageKey, value);
+    } catch (e) {}
+
+    updateConsentUI(value);
+
+    if (value === "accepted" && typeof window.loadAnchorMatomo === "function") {
+      window.loadAnchorMatomo();
     }
   };
 
@@ -324,6 +329,23 @@ document.addEventListener("DOMContentLoaded", function () {
       setConsent("rejected");
     });
   });
+
+  if (toggleEl) {
+    const handleToggle = () => {
+      const current = getConsent();
+      const next = current === "accepted" ? "rejected" : "accepted";
+      setConsent(next);
+    };
+
+    toggleEl.addEventListener("click", handleToggle);
+
+    toggleEl.addEventListener("keydown", function (event) {
+      if (event.key === " " || event.key === "Enter") {
+        event.preventDefault();
+        handleToggle();
+      }
+    });
+  }
 
   const currentConsent = getConsent();
   updateConsentUI(currentConsent);
