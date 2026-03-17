@@ -1551,3 +1551,118 @@ select{
   display: block;
   margin-top: 0.25rem;
 }
+/* -------------------------
+   Cookie banner
+   ------------------------- */
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-banner {
+  position: fixed;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  z-index: 3000;
+}
+
+.cookie-banner__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+
+.cookie-banner__title {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.cookie-banner__copy {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.cookie-banner__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-banner__button {
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+
+.cookie-banner__button--primary {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.cookie-banner__button--secondary {
+  background: #fff;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+/* -------------------------
+   Cookie preferences
+   ------------------------- */
+.cookie-preferences {
+  margin-top: 18px;
+}
+
+.cookie-preferences__card {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 18px;
+}
+
+.cookie-preferences__title {
+  margin: 0 0 8px;
+}
+
+.cookie-preferences__text {
+  margin: 0 0 12px;
+  color: var(--color-muted);
+}
+
+.cookie-preferences__status {
+  margin: 0 0 14px;
+}
+
+.cookie-preferences__actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.cookie-preferences__button {
+  border-radius: 999px;
+  padding: 10px 14px;
+}
+
+.cookie-preferences__button--primary {
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.cookie-preferences__button--secondary {
+  background: #fff;
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+@media (max-width: 899px) {
+  .cookie-banner__inner {
+    grid-template-columns: 1fr;
+  }
+}

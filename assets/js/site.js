@@ -219,7 +219,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const dd = String(now.getDate()).padStart(2, "0");
     const dateString = `${yyyy}-${mm}-${dd}`;
 
-    subjectField.value = `website form - ${name} - ${dateString} - ${subjectChoice}`;
+    subjectField.value = `${name} - ${dateString} - ${subjectChoice}`;
 
     bodyField.value = [
       `Name - ${name}`,
@@ -270,4 +270,65 @@ document.addEventListener("DOMContentLoaded", function () {
       submitButton.textContent = "Send message";
     }
   });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const cfg = window.AnchorAnalyticsConfig || {};
+  const storageKey = cfg.storageKey || "anchor_cookie_consent";
+
+  const banner = document.getElementById("cookie-banner");
+  const statusEl = document.getElementById("cookie-preferences-status");
+
+  const getConsent = () => {
+    try {
+      return localStorage.getItem(storageKey);
+    } catch (e) {
+      return null;
+    }
+  };
+
+  const setConsent = (value) => {
+    try {
+      localStorage.setItem(storageKey, value);
+    } catch (e) {}
+    updateConsentUI(value);
+
+    if (value === "accepted" && typeof window.loadAnchorMatomo === "function") {
+      window.loadAnchorMatomo();
+    }
+  };
+
+  const updateConsentUI = (value) => {
+    if (banner) {
+      banner.hidden = value === "accepted" || value === "rejected";
+    }
+
+    if (statusEl) {
+      if (value === "accepted") {
+        statusEl.textContent = "Accepted";
+      } else if (value === "rejected") {
+        statusEl.textContent = "Rejected";
+      } else {
+        statusEl.textContent = "Not set";
+      }
+    }
+  };
+
+  document.querySelectorAll("[data-cookie-accept]").forEach((button) => {
+    button.addEventListener("click", function () {
+      setConsent("accepted");
+    });
+  });
+
+  document.querySelectorAll("[data-cookie-reject]").forEach((button) => {
+    button.addEventListener("click", function () {
+      setConsent("rejected");
+    });
+  });
+
+  const currentConsent = getConsent();
+  updateConsentUI(currentConsent);
+
+  if (currentConsent === "accepted" && typeof window.loadAnchorMatomo === "function") {
+    window.loadAnchorMatomo();
+  }
 });

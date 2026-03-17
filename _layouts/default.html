@@ -14,11 +14,11 @@
     </main>
 
     {% include footer.html %}
+    {% include cookie-banner.html %}
+    {% include matomo.html %}
 
-    <!-- Global site JS (optional but recommended for nav interactions etc.) -->
     <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
 
-    <!-- Page-specific JS bundles -->
     {% if page.js %}
       {% for file in page.js %}
         <script src="{{ '/assets/js/' | append: file | append: '.js' | relative_url }}" defer></script>
