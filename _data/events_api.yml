@@ -1,1 +1,3 @@
 base_url: "https://tools.billson.li/api/events"
+
+future_days_limit: 40

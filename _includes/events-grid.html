@@ -1,4 +1,8 @@
-<section class="events" data-events-api data-events-api-url="{{ site.data.events_api.base_url | escape }}">
+<section
+  class="events"
+  data-events-api
+  data-events-api-url="{{ site.data.events_api.base_url | escape }}"
+  data-events-future-days="{{ site.data.events_api.future_days_limit | default: 40 }}">
   <div class="events__controls" aria-label="Event filters" hidden id="events-controls">
     <div class="events__controls-left">
       <button type="button" class="events__filter is-active" data-filter="all">

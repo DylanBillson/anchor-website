@@ -17,6 +17,7 @@
   const featuredText = document.getElementById("api-featured-text");
   const featuredMeta = document.getElementById("api-featured-meta");
   const featuredPoster = document.getElementById("api-featured-poster");
+  const futureDaysLimit = parseInt(root.dataset.eventsFutureDays || "40", 10);
 
   let events = [];
   let filteredEvents = [];
@@ -54,7 +55,19 @@
 
   const isUpcoming = (event) => {
     const d = parseEventDate(event);
-    return d && d >= today;
+    if (!d) return false;
+
+    const now = new Date();
+
+    // Start of "today"
+    const start = new Date(now);
+    start.setHours(0, 0, 0, 0);
+
+    // End limit (today + N days)
+    const end = new Date(start);
+    end.setDate(end.getDate() + futureDaysLimit);
+
+    return d >= start && d <= end;
   };
 
   const sortByNearest = (a, b) => {
