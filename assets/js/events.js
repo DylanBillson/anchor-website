@@ -1,137 +1,244 @@
 (() => {
-  const root = document.querySelector("[data-events]");
+  const root = document.querySelector("[data-events-api]");
   if (!root) return;
 
-  const grid = root.querySelector("[data-events-grid]");
-  const emptyEl = root.querySelector("[data-events-empty]");
-  const searchInput = root.querySelector("[data-events-search]");
-  const filterWrap = root.querySelector("[data-filter-buttons]");
+  const apiUrl = root.dataset.eventsApiUrl;
+  const controls = document.getElementById("events-controls");
+  const loadingEl = document.getElementById("events-loading");
+  const errorEl = document.getElementById("events-error");
+  const emptyEl = document.getElementById("events-empty");
+  const gridEl = document.getElementById("events-grid");
+  const filterWrap = document.getElementById("events-filter-buttons");
   const allBtn = root.querySelector('[data-filter="all"]');
+  const searchInput = document.getElementById("events-search");
 
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
+  const featuredSection = document.getElementById("api-featured-event");
+  const featuredTitle = document.getElementById("api-featured-title");
+  const featuredText = document.getElementById("api-featured-text");
+  const featuredMeta = document.getElementById("api-featured-meta");
+  const featuredPoster = document.getElementById("api-featured-poster");
 
-  const cards = Array.from(root.querySelectorAll("[data-event]"));
-
-  const parseDate = (dateStr) => {
-    // dateStr = YYYY-MM-DD
-    const [y, m, d] = dateStr.split("-").map(Number);
-    return new Date(y, (m - 1), d);
-  };
-
-  const formatDate = (dateStr, timeStr) => {
-    const dt = parseDate(dateStr);
-    const opts = { weekday: "short", day: "2-digit", month: "short", year: "numeric" };
-    const datePart = dt.toLocaleDateString("en-GB", opts);
-    return timeStr ? `${datePart} • ${timeStr}` : datePart;
-  };
-
-  // Collect tags
-  const tagSet = new Set();
-  cards.forEach((c) => {
-    const tags = (c.dataset.tags || "").split("|").filter(Boolean);
-    tags.forEach((t) => tagSet.add(t));
-  });
-  const tags = Array.from(tagSet).sort((a, b) => a.localeCompare(b, "en"));
-
-  // Build filter buttons
-  const makeBtn = (label) => {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "events__filter";
-    b.textContent = label;
-    b.dataset.filter = label;
-    return b;
-  };
-
-  tags.forEach((t) => filterWrap.appendChild(makeBtn(t)));
-
+  let events = [];
+  let filteredEvents = [];
   let activeFilter = "all";
   let query = "";
 
-  const setActiveButton = () => {
-    root.querySelectorAll(".events__filter").forEach((b) => b.classList.remove("is-active"));
-    const sel = activeFilter === "all" ? allBtn : root.querySelector(`.events__filter[data-filter="${CSS.escape(activeFilter)}"]`);
-    if (sel) sel.classList.add("is-active");
+  const today = new Date();
+
+  const parseDate = (value) => {
+    if (!value) return null;
+    const d = new Date(value);
+    return Number.isNaN(d.getTime()) ? null : d;
   };
 
-  const isPastEvent = (card) => {
-    const dt = parseDate(card.dataset.date);
-    return dt < today;
+  const parseEventDate = (event) => {
+    return parseDate(event.start_at) || parseDate(`${event.date}T23:59:59`);
   };
 
-  // Sort cards: pinned first, then by date ascending
-  const sorted = cards.slice().sort((a, b) => {
-    const ap = a.dataset.pinned === "true";
-    const bp = b.dataset.pinned === "true";
-    if (ap !== bp) return ap ? -1 : 1;
+  const isUpcoming = (event) => {
+    const d = parseEventDate(event);
+    return d && d >= today;
+  };
 
-    const ad = parseDate(a.dataset.date).getTime();
-    const bd = parseDate(b.dataset.date).getTime();
+  const sortByNearest = (a, b) => {
+    const ad = parseEventDate(a)?.getTime() || 0;
+    const bd = parseEventDate(b)?.getTime() || 0;
     return ad - bd;
-  });
-
-  // Apply formatted date labels
-  sorted.forEach((c) => {
-    const dateEl = c.querySelector("[data-event-date]");
-    if (dateEl) dateEl.textContent = formatDate(c.dataset.date, c.dataset.time || "");
-  });
-
-  // Render in sorted order
-  sorted.forEach((c) => grid.appendChild(c));
-
-  const matches = (card) => {
-    // hide past events always
-    if (isPastEvent(card)) return false;
-
-    // filter by tag
-    if (activeFilter !== "all") {
-      const tags = (card.dataset.tags || "").split("|").filter(Boolean);
-      if (!tags.includes(activeFilter)) return false;
-    }
-
-    // search
-    if (query) {
-      const hay = `${card.dataset.title || ""} ${card.dataset.description || ""}`.toLowerCase();
-      if (!hay.includes(query)) return false;
-    }
-
-    return true;
   };
 
-  const update = () => {
-    let visible = 0;
-    sorted.forEach((card) => {
-      const ok = matches(card);
-      card.hidden = !ok;
-      if (ok) visible++;
+  const formatDateTime = (event) => {
+    const start = parseDate(event.start_at);
+    if (!start) {
+      return event.date || "";
+    }
+
+    const datePart = start.toLocaleDateString("en-GB", {
+      weekday: "short",
+      day: "2-digit",
+      month: "short",
+      year: "numeric"
     });
 
-    if (emptyEl) emptyEl.hidden = visible !== 0;
-    setActiveButton();
+    if (event.public_timing_note && event.public_timing_note.trim() !== "") {
+      return `${datePart} • ${event.public_timing_note.trim()}`;
+    }
+
+    const timePart = start.toLocaleTimeString("en-GB", {
+      hour: "2-digit",
+      minute: "2-digit"
+    });
+
+    return `${datePart} • ${timePart}`;
   };
 
-  // Filter button clicks
-  root.addEventListener("click", (e) => {
-    const btn = e.target.closest(".events__filter");
+  const escapeHtml = (value) => {
+    return String(value ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  };
+
+  const buildEventCard = (event) => {
+    const categories = Array.isArray(event.categories) ? event.categories : [];
+    const formattedDate = formatDateTime(event);
+    const desc = event.description ? `<p class="event-card__desc">${escapeHtml(event.description)}</p>` : "";
+
+    const tags = categories.length
+      ? `
+        <div class="event-card__tags" aria-label="Event categories">
+          ${categories
+            .map((tag) => `<span class="event-tag">${escapeHtml(tag)}</span>`)
+            .join("")}
+        </div>
+      `
+      : "";
+
+    return `
+      <article class="event-card" data-event-card data-categories="${escapeHtml(categories.join("|"))}">
+        <header class="event-card__header">
+          <h3 class="event-card__title">${escapeHtml(event.title)}</h3>
+          <p class="event-card__date">${escapeHtml(formattedDate)}</p>
+        </header>
+        ${desc}
+        ${tags}
+      </article>
+    `;
+  };
+
+  const renderFeatured = (items) => {
+    if (!featuredSection || !featuredTitle || !featuredText || !featuredMeta || !featuredPoster) return;
+
+    const featured = items
+      .filter((event) => event.advertise_as_special === true && event.poster_png_url)
+      .sort(sortByNearest)[0];
+
+    if (!featured) {
+      featuredSection.hidden = true;
+      return;
+    }
+
+    featuredTitle.textContent = featured.title || "";
+    featuredText.textContent = featured.description || "";
+    featuredMeta.textContent = formatDateTime(featured);
+    featuredPoster.src = featured.poster_png_url;
+    featuredPoster.alt = featured.title ? `${featured.title} poster` : "Featured event poster";
+
+    featuredSection.hidden = false;
+  };
+
+  const renderCategoryButtons = (items) => {
+    if (!filterWrap) return;
+
+    const categories = Array.from(
+      new Set(
+        items.flatMap((event) =>
+          Array.isArray(event.categories) ? event.categories : []
+        )
+      )
+    ).sort((a, b) => a.localeCompare(b, "en"));
+
+    filterWrap.innerHTML = categories
+      .map(
+        (category) =>
+          `<button type="button" class="events__filter" data-filter="${escapeHtml(category)}">${escapeHtml(category)}</button>`
+      )
+      .join("");
+  };
+
+  const applyFilters = () => {
+    filteredEvents = events.filter((event) => {
+      const matchesCategory =
+        activeFilter === "all" ||
+        (Array.isArray(event.categories) && event.categories.includes(activeFilter));
+
+      const haystack = `${event.title || ""} ${event.description || ""} ${(event.categories || []).join(" ")}`
+        .toLowerCase();
+
+      const matchesSearch = !query || haystack.includes(query);
+
+      return matchesCategory && matchesSearch;
+    });
+
+    renderGrid();
+    updateFilterButtons();
+  };
+
+  const renderGrid = () => {
+    if (!gridEl || !emptyEl) return;
+
+    if (!filteredEvents.length) {
+      gridEl.hidden = true;
+      emptyEl.hidden = false;
+      gridEl.innerHTML = "";
+      return;
+    }
+
+    emptyEl.hidden = true;
+    gridEl.hidden = false;
+    gridEl.innerHTML = filteredEvents.map(buildEventCard).join("");
+  };
+
+  const updateFilterButtons = () => {
+    root.querySelectorAll(".events__filter").forEach((btn) => {
+      const value = btn.dataset.filter || "";
+      btn.classList.toggle("is-active", value === activeFilter);
+    });
+  };
+
+  const setLoadedState = () => {
+    if (loadingEl) loadingEl.hidden = true;
+    if (errorEl) errorEl.hidden = true;
+    if (controls) controls.hidden = false;
+  };
+
+  const setErrorState = () => {
+    if (loadingEl) loadingEl.hidden = true;
+    if (controls) controls.hidden = true;
+    if (gridEl) gridEl.hidden = true;
+    if (emptyEl) emptyEl.hidden = true;
+    if (errorEl) errorEl.hidden = false;
+    if (featuredSection) featuredSection.hidden = true;
+  };
+
+  root.addEventListener("click", (event) => {
+    const btn = event.target.closest(".events__filter");
     if (!btn) return;
-
-    const val = btn.dataset.filter;
-    if (!val) return;
-
-    activeFilter = val === "all" ? "all" : val;
-    update();
+    activeFilter = btn.dataset.filter || "all";
+    applyFilters();
   });
 
-  // Search input
   if (searchInput) {
     searchInput.addEventListener("input", () => {
-      query = (searchInput.value || "").trim().toLowerCase();
-      update();
+      query = searchInput.value.trim().toLowerCase();
+      applyFilters();
     });
   }
 
-  // Initial state
-  setActiveButton();
-  update();
+  const init = async () => {
+    if (!apiUrl) {
+      setErrorState();
+      return;
+    }
+
+    try {
+      const response = await fetch(apiUrl, { method: "GET" });
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+      const data = await response.json();
+      const results = Array.isArray(data.results) ? data.results : [];
+
+      events = results.filter(isUpcoming).sort(sortByNearest);
+
+      setLoadedState();
+      renderFeatured(events);
+      renderCategoryButtons(events);
+      applyFilters();
+    } catch (error) {
+      setErrorState();
+    }
+  };
+
+  init();
 })();
