@@ -25,6 +25,23 @@
 
   const today = new Date();
 
+  const apiOrigin = (() => {
+    try {
+      return new URL(apiUrl).origin;
+    } catch (e) {
+      return "";
+    }
+  })();
+
+  const resolveAssetUrl = (value) => {
+    if (!value) return "";
+    try {
+      return new URL(value, apiOrigin).href;
+    } catch (e) {
+      return value;
+    }
+  };
+
   const parseDate = (value) => {
     if (!value) return null;
     const d = new Date(value);
@@ -122,7 +139,7 @@
     featuredTitle.textContent = featured.title || "";
     featuredText.textContent = featured.description || "";
     featuredMeta.textContent = formatDateTime(featured);
-    featuredPoster.src = featured.poster_png_url;
+    featuredPoster.src = resolveAssetUrl(featured.poster_png_url);
     featuredPoster.alt = featured.title ? `${featured.title} poster` : "Featured event poster";
 
     featuredSection.hidden = false;
