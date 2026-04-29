@@ -22,7 +22,7 @@ We can supply packed lunches, with **vegetarian, vegan and gluten-free options**
 
 ## How much notice?
 
-- We require a **minimum of seven days** notice for pick-ups. In rare cases where we are unable to provide transport, we can offer details of local taxi services.
+- We require a **minimum of seven days** notice for pick-ups. If we're unable to provide transport, we can offer details of local taxi services.
 - Packed lunches should be ordered **the night before**.  
 - Please let us know if you have any particular dietary requirements.
 

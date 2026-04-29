@@ -8,7 +8,7 @@ intro: "A traditional village pub in the heart of Hartland, welcoming locals, wa
 
 ## Our Story
 
-The Anchor is a 16th century inn located in Hartland, North Devon, with pub, restaurant, hotel and dog-friendly bar.
+The Anchor is a 16th-century inn located in Hartland, North Devon, with pub, restaurant, hotel and dog-friendly bar.
 
 It is the ideal location, whether you are seeking peace and quiet, or an invigorating walk along the nearby coast path. The Anchor is somewhere you can enjoy a proper meal, a good drink, live music, and the kind of atmosphere that feels relaxed and unpretentious.
 
@@ -47,7 +47,7 @@ We regularly host live music and events, see our **What’s On** page for upcomi
 - Regular live events  
 - Rooms 
 - Support for walkers (packed lunches, lifts and practical help on request)
-- Free WIFI
+- Free WiFi
 
 ---
 

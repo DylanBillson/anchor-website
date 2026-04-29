@@ -16,7 +16,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
   <div>
     <p>The Anchor’s bar is a place to settle in, whether you’re calling in for a quick pint, meeting friends for an evening, or warming up after a walk.</p>
     <p>We aim to keep things simple: a friendly atmosphere, a well-kept selection behind the bar, and a space that feels welcoming to locals and visitors alike.</p>
-    <p>We offer a comprehensive range of real ales, lagers, ciders, wines and spirits with guest and local ales and spirits regularly featured</p>
+    <p>We offer a comprehensive range of real ales, lagers, ciders, wines and spirits, with guest and local ales and spirits regularly featured</p>
   </div>
   <div>
     <img src="/assets/img/page/anchor-page-bar.webp" alt="Inside The Anchor Inn bar" loading="lazy" decoding="async" />
@@ -44,7 +44,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
 <div class="two-col two-col--top">
   <div>
     <p>The Anchor has two fireplaces that kick out a lot of heat, ensuring the pub is always warm and cosy.</p>
-    <p>Sit by the fireplace and read a book and relax.</p>
+    <p>Sit by the fire, read a book, and relax.</p>
   </div>
   <div>
     <img src="/assets/img/page/anchor-page-fireplace-temp.webp" alt="The fireplace in the Anchor" loading="lazy" decoding="async" />
@@ -68,7 +68,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
     <p>Our pool table is considered to be one of the best in the local league, and is free to use</p>
   </div>
   <div>
-    <img src="/assets/img/page/anchor-page-amenities.webp" alt="The Anchor Inn Pool Table" loading="lazy" decoding="async" />
+    <img src="/assets/img/page/anchor-page-amenities.webp" alt="The Anchor Inn Pool Table & Darts Board" loading="lazy" decoding="async" />
   </div>
 </div>
 
@@ -83,7 +83,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
     <p>If you play, you’re welcome to use them, just be considerate of the room and the time of day.</p>
   </div>
   <div>
-    <img src="/assets/img/page/anchor-page-piano.webp" alt="The Anchor Inn Pool Table" loading="lazy" decoding="async" />
+    <img src="/assets/img/page/anchor-page-piano.webp" alt="The Anchor Inn Pianos" loading="lazy" decoding="async" />
   </div>
 </div>
 
