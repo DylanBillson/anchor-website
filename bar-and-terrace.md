@@ -47,7 +47,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
     <p>Sit by the fire, read a book, and relax.</p>
   </div>
   <div>
-    <img src="/assets/img/page/anchor-page-fireplace-temp.webp" alt="The fireplace in the Anchor" loading="lazy" decoding="async" />
+    <img src="/assets/img/page/anchor-page-fireplace.webp" alt="The fireplace in the Anchor" loading="lazy" decoding="async" />
   </div>
 </div>
 
