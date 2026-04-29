@@ -1,22 +1,13 @@
 ---
 title: "Food"
-description: "Lunch, dinner, kids and Sunday Roast menus at The Anchor Inn, plus allergen information and table booking."
-hero_image: /assets/img/hero/anchor-hero-food-temp.webp
+description: "Active menus at The Anchor Inn, plus allergen information and table booking."
+hero_image: /assets/img/heroes/food.jpg
 hero_alt: "A plated meal at The Anchor Inn"
-intro: "Lunch and evening menus through the week, with Roasts on Sundays."
+intro: "View our current menus below. All menus are loaded directly from The Anchor’s menu system."
+js: [menus]
 ---
 
-## Jump to a menu
-
-<nav class="anchor-links" aria-label="Food page sections">
-  <a href="#lunch">Lunch</a>
-  <a href="#dinner">Dinner</a>
-  <a href="#kids">Kids</a>
-  <a href="#sunday">Sunday Roast</a>
-  <a href="#allergens">Allergen information</a>
-</nav>
-
----
+## Kitchen opening times
 
 {% include opening-times.html context="food" %}
 
@@ -24,29 +15,8 @@ intro: "Lunch and evening menus through the week, with Roasts on Sundays."
 
 {::nomarkdown}
 {% include food-special.html %}
+{% include menus-api.html %}
 {:/nomarkdown}
-
-## Lunch {#lunch}
-
-{% include menu-section.html section="lunch" %}
-
----
-
-## Dinner {#dinner}
-
-{% include menu-section.html section="dinner" %}
-
----
-
-## Kids {#kids}
-
-{% include menu-section.html section="kids" %}
-
----
-
-## Sunday Roast {#sunday}
-
-{% include menu-section.html section="sunday" %}
 
 ---
 

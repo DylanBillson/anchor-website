@@ -1790,3 +1790,70 @@ select{
     grid-template-columns: 1fr;
   }
 }
+/* -------------------------
+   API Menus
+   ------------------------- */
+.menus-api {
+  margin-top: 18px;
+}
+
+.menus-api__quick-links {
+  margin-bottom: 18px;
+}
+
+.menus-api__status {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+  padding: 18px;
+  margin-top: 18px;
+}
+
+.menus-api__status p {
+  margin: 0;
+}
+
+.menus-api__list {
+  display: grid;
+  gap: 14px;
+}
+
+/* Multi-column menu item layout from API column_count */
+.menu__items--cols-2,
+.menu__items--cols-3 {
+  display: grid;
+  gap: 12px;
+}
+
+.menu__items--cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.menu__items--cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+/* Duo section */
+.menu-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.menu-duo__col {
+  border: 1px dashed var(--color-border);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.menu__item--compact .menu__item-top {
+  gap: 10px;
+}
+
+@media (max-width: 899px) {
+  .menu__items--cols-2,
+  .menu__items--cols-3,
+  .menu-duo {
+    grid-template-columns: 1fr;
+  }
+}

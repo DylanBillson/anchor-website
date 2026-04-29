@@ -1,0 +1,19 @@
+<section class="menus-api" data-menus-api data-menus-api-url="{{ site.data.menus_api.base_url | escape }}">
+  <nav class="anchor-links menus-api__quick-links" id="menus-api-links" aria-label="Food menu sections" hidden>
+    <a href="#allergens">Allergen information</a>
+  </nav>
+
+  <div class="menus-api__status" id="menus-loading">
+    <p>Loading current menus…</p>
+  </div>
+
+  <div class="menus-api__status" id="menus-error" hidden>
+    <p>We’re sorry — we couldn’t load the current menus right now. Please ask a member of staff or contact us directly.</p>
+  </div>
+
+  <div class="menus-api__status" id="menus-empty" hidden>
+    <p>There are no active menus to show at the moment.</p>
+  </div>
+
+  <div class="menus-api__list" id="menus-list" hidden></div>
+</section>
