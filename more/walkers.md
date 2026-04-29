@@ -36,7 +36,7 @@ If you walk the entire distance, you’ll have climbed **114,931 feet**, equival
 
 <div class="waymaker">
   <a class="waymaker__button" href="https://support.southwestcoastpath.org.uk/portal/s/placefinder" target="_blank" rel="noopener">
-    <img class="waymaker__logo" src="/assets/img/way-maker-icon.avif" alt="South West Coast Path Way Maker" loading="lazy" decoding="async" />
+    <img class="waymaker__logo" src="/assets/img/logo/anchor-page-waymaker.webp" alt="South West Coast Path Way Maker" loading="lazy" decoding="async" />
     <span>Find Way Makers</span>
   </a>
 </div>
