@@ -1,7 +1,7 @@
 ---
 title: "About"
 description: "The Anchor Inn’s history, values and what to expect when you visit our village pub in Hartland."
-hero_image: /assets/img/hero/anchor-hero-about-temp.png
+hero_image: /assets/img/hero/anchor-hero-about.webp
 hero_alt: "Inside The Anchor Inn bar area"
 intro: "A traditional village pub in the heart of Hartland, welcoming locals, walkers and visitors alike."
 ---

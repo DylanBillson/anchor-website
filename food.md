@@ -1,7 +1,7 @@
 ---
 title: "Food"
 description: "Lunch, dinner, kids and Sunday Roast menus at The Anchor Inn, plus allergen information and table booking."
-hero_image: /assets/img/hero/anchor-hero-food-temp.png
+hero_image: /assets/img/hero/anchor-hero-food-temp.webp
 hero_alt: "A plated meal at The Anchor Inn"
 intro: "Lunch and evening menus through the week, with Sunday Roasts on Sundays."
 ---

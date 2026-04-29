@@ -1,7 +1,7 @@
 ---
 title: "Bar"
 description: "The Anchor Inn bar in Hartland — open daily from 11am. Drinks, darts, pool, a sun terrace, and two pianos."
-hero_image: /assets/img/hero/anchor-hero-bar-temp.png
+hero_image: /assets/img/hero/anchor-hero-bar.webp
 hero_alt: "The Anchor Inn bar area"
 intro: "A relaxed village bar with good drinks, classic pub games, and a terrace for sunny days."
 ---
@@ -19,7 +19,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
     <p>We offer a comprehensive range of real ales, lagers, ciders, wines and spirits with guest and local ales and spirits regularly featured</p>
   </div>
   <div>
-    <img src="/assets/img/the-bar.png" alt="Inside The Anchor Inn bar" loading="lazy" decoding="async" />
+    <img src="/assets/img/page/anchor-page-bar.webp" alt="Inside The Anchor Inn bar" loading="lazy" decoding="async" />
   </div>
 </div>
 
@@ -33,7 +33,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
     <p>It’s a relaxed outdoor space where you can unwind, catch up, and enjoy the village atmosphere.</p>
   </div>
   <div>
-    <img src="/assets/img/terrace.avif" alt="The Anchor Inn sun terrace" loading="lazy" decoding="async" />
+    <img src="/assets/img/page/anchor-page-terrace.webp" alt="The Anchor Inn sun terrace" loading="lazy" decoding="async" />
   </div>
 </div>
 
@@ -47,7 +47,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
     <p>Sit by the fireplace and read a book and relax.</p>
   </div>
   <div>
-    <img src="/assets/img/fireplace.png" alt="The fireplace in the Anchor" loading="lazy" decoding="async" />
+    <img src="/assets/img/page/anchor-page-fireplace-temp.webp" alt="The fireplace in the Anchor" loading="lazy" decoding="async" />
   </div>
 </div>
 
@@ -68,7 +68,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
     <p>Our pool table is considered to be one of the best in the local league, and is free to use</p>
   </div>
   <div>
-    <img src="/assets/img/amenities.png" alt="The Anchor Inn Pool Table" loading="lazy" decoding="async" />
+    <img src="/assets/img/page/anchor-page-amenities.webp" alt="The Anchor Inn Pool Table" loading="lazy" decoding="async" />
   </div>
 </div>
 
@@ -83,7 +83,7 @@ intro: "A relaxed village bar with good drinks, classic pub games, and a terrace
     <p>If you play, you’re welcome to use them, just be considerate of the room and the time of day.</p>
   </div>
   <div>
-    <img src="/assets/img/piano.avif" alt="The Anchor Inn Pool Table" loading="lazy" decoding="async" />
+    <img src="/assets/img/page/anchor-page-piano.webp" alt="The Anchor Inn Pool Table" loading="lazy" decoding="async" />
   </div>
 </div>
 

@@ -1,7 +1,7 @@
 ---
 title: "Functions"
 description: "Host your celebration, gathering or meeting at The Anchor Inn in Hartland. Get in touch to discuss dates and options."
-hero_image: /assets/img/hero/anchor-hero-function-temp.png
+hero_image: /assets/img/hero/anchor-hero-function.webp
 hero_alt: "A cosy pub space set up for a gathering"
 intro: "Planning a celebration, get-together, or small event? We’d love to help you host it."
 ---

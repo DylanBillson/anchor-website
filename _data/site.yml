@@ -1,10 +1,10 @@
 # General site-level settings
 
-logo: "/assets/img/anchor-logo-website.webp"  # Add path later if you upload a logo e.g. /assets/img/logo.svg
+logo: "/assets/img/logo/anchor-website-logo.webp"  # Add path later if you upload a logo e.g. /assets/img/logo.svg
 
 footer_blurb: "A friendly village pub in Hartland — food, drinks, rooms and events."
 
-rooms_url: "https://rooms.anchorhartland.co.uk"
+rooms_url: "https://www.booking.com/Share-lNssug"
 
 owner: "Riding To The Anchor Inn Limited"
 
@@ -15,6 +15,6 @@ social:
   threads: "https://www.threads.com/@anchorhartland"
   bluesky: "https://bsky.app/profile/anchorhartland.co.uk"
   mastodon: "https://mastodon.social/@anchorhartland"
-  facebook: "https://www.facebook.com/theanchorhartland"
+  facebook: "https://www.facebook.com/anchorhartland"
   tripadvisor: "https://www.tripadvisor.co.uk/Restaurant_Review-g1432147-d1548671-Reviews-The_Anchor_Inn-Hartland_Torridge_Devon_England.html"
   youtube: "https://www.youtube.com/@anchorhartland"

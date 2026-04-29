@@ -1,7 +1,7 @@
 ---
 title: "Walkers"
 description: "Support for walkers at The Anchor Inn: coast path lifts, packed lunches, drying wet gear, and a warm place to rest."
-hero_image: /assets/img/hero/anchor-hero-walkers-temp.jpg
+hero_image: /assets/img/hero/anchor-hero-walkers.webp
 hero_alt: "A walker on the South West Coast Path near Hartland"
 intro: "Walking the coast path? We can help with lifts, packed lunches, and a warm place to dry off."
 ---
@@ -22,17 +22,9 @@ We can supply packed lunches, with **vegetarian, vegan and gluten-free options**
 
 ## How much notice?
 
-- We need a **minimum of 24 hours notice** for pick ups.  
+- We require a **minimum of seven days** notice for pick-ups. In rare cases where we are unable to provide transport, we can offer details of local taxi services.
 - Packed lunches should be ordered **the night before**.  
 - Please let us know if you have any particular dietary requirements.
-
----
-
-## “I got absolutely soaked!”
-
-No problem.
-
-We can dry your clothes at The Anchor whilst you wait in our comfortable, warm, friendly bar, with a nice cup of **Assam**, freshly brewed coffee, or something a little stronger. We even have cake.
 
 ---
 
