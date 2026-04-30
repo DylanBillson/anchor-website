@@ -10,7 +10,7 @@ intro: "Planning a celebration, get-together, or small event? We’d love to hel
 
 The Anchor Inn is a relaxed, friendly place for gatherings, whether you’re organising a birthday meal, a wake, a post-walk group stop, or a small community event.
 
-We’ll help you plan something simple, relaxed, and enjoyable, with food and drinks options that fit the occasion.
+We’ll help you plan something relaxed and enjoyable, with food and drinks options that fit the occasion.
 
 ---
 
