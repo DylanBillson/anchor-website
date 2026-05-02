@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<article class="blog-post">
+  <header class="blog-post__header container">
+    <h1 class="blog-post__title">{{ page.title }}</h1>
+
+    <p class="blog-post__meta">
+      {{ page.date | date: "%-d %B %Y" }}
+      {% if page.author %} · {{ page.author | escape }}{% endif %}
+    </p>
+
+    {% if page.image %}
+      <div class="blog-post__hero">
+        <img
+          src="{{ page.image | relative_url }}"
+          alt="{{ page.image_alt | default: page.title | escape }}"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    {% endif %}
+  </header>
+
+  <section class="blog-post__content container">
+    {{ content }}
+  </section>
+</article>

@@ -5,7 +5,7 @@
 title: "The Anchor Inn"
 description: "Food, drinks, rooms and events at The Anchor Inn in Hartland, North Devon."
 url: "https://anchor.billson.li"   # Replace with live domain later
-baseurl: ""                               # Leave blank for root deployment
+baseurl: ""
 
 # -----------------------------------
 # Build Settings
@@ -17,7 +17,6 @@ permalink: pretty
 
 # -----------------------------------
 # Defaults
-# Automatically apply layout & metadata
 # -----------------------------------
 
 defaults:
@@ -26,6 +25,13 @@ defaults:
       type: "pages"
     values:
       layout: page
+      og_image: /assets/img/og/default.jpg
+
+  - scope:
+      path: ""
+      type: "blog"
+    values:
+      layout: blog-post
       og_image: /assets/img/og/default.jpg
 
 # -----------------------------------
@@ -41,16 +47,16 @@ exclude:
   - Gemfile.lock
 
 # -----------------------------------
-# Collections (Optional - for future expansion)
-# Currently not required but good foundation
+# Collections
 # -----------------------------------
 
 collections:
-  posts:
-    output: false
+  blog:
+    output: true
+    permalink: /more/blog/:name/
 
 # -----------------------------------
-# Sass (Optional, if you use it later)
+# Sass
 # -----------------------------------
 
 sass:
