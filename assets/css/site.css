@@ -1900,3 +1900,9 @@ select{
   border-radius: var(--radius);
   pointer-events: none;
 }
+.gallery-card[hidden] {
+  display: none !important;
+}
+.event-card[hidden] {
+  display: none !important;
+}
