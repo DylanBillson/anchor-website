@@ -1906,3 +1906,16 @@ select{
 .event-card[hidden] {
   display: none !important;
 }
+.site-header__brand {
+  flex: 0 0 auto;
+  min-width: 0;
+}
+
+.site-header__logo {
+  height: 42px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  flex: 0 0 auto;
+  aspect-ratio: auto;
+}
