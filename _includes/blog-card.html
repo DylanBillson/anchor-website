@@ -1,4 +1,4 @@
-<article class="blog-card {% if include.pinned %}blog-card--pinned{% endif %}">
+<article class="blog-card {% if include.pinned %}blog-card--pinned{% endif %}" data-blog-card data-title="{{ include.post.title | escape }}" data-description="{{ include.post.description | escape }}" data-tags="{% if include.post.tags %}{{ include.post.tags | join: '|' | escape }}{% endif %}">
   {% if include.post.image %}
     <a class="blog-card__image-link" href="{{ include.post.url | relative_url }}">
       <img
@@ -36,5 +36,7 @@
         {% endfor %}
       </div>
     {% endif %}
+
+    <a class="blog-card__button" href="{{ include.post.url | relative_url }}">Read more</a>
   </div>
 </article>
