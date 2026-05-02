@@ -7,6 +7,7 @@
   const searchInput = root.querySelector("[data-gallery-search]");
   const filterWrap = root.querySelector("[data-filter-buttons]");
   const allBtn = root.querySelector('[data-filter="all"]');
+  const yearSelect = root.querySelector("[data-gallery-year-filter]");
 
   const cards = Array.from(root.querySelectorAll("[data-item]"));
 
@@ -21,26 +22,6 @@
     return dt.toLocaleDateString("en-GB", opts);
   };
 
-  const isYouTube = (url) => /youtube\.com\/watch\?v=|youtu\.be\//i.test(url);
-  const isVimeo = (url) => /vimeo\.com\/\d+/i.test(url);
-  const isMp4 = (url) => /\.mp4(\?|#|$)/i.test(url);
-
-  const youtubeId = (url) => {
-    try {
-      const u = new URL(url);
-      if (u.hostname.includes("youtu.be")) return u.pathname.replace("/", "");
-      if (u.searchParams.get("v")) return u.searchParams.get("v");
-      return "";
-    } catch {
-      return "";
-    }
-  };
-
-  const vimeoId = (url) => {
-    const m = url.match(/vimeo\.com\/(\d+)/i);
-    return m ? m[1] : "";
-  };
-
   const renderMedia = (card) => {
     const type = card.dataset.type;
     const mediaUrl = card.dataset.mediaUrl;
@@ -48,10 +29,8 @@
     const mediaEl = card.querySelector("[data-media]");
     if (!mediaEl) return;
 
-    // Clear existing
     mediaEl.innerHTML = "";
 
-    // IMAGE
     if (type === "image") {
       const img = document.createElement("img");
       img.src = mediaUrl;
@@ -60,7 +39,6 @@
       img.decoding = "async";
       img.className = "gallery-card__img";
 
-      // Clicking opens full image in new tab
       const a = document.createElement("a");
       a.href = mediaUrl;
       a.target = "_blank";
@@ -71,7 +49,6 @@
       return;
     }
 
-    // VIDEO
     const a = document.createElement("a");
     a.href = mediaUrl;
     a.target = "_blank";
@@ -88,7 +65,6 @@
       img.className = "gallery-card__img";
       a.appendChild(img);
     } else {
-      // Fallback thumbnail (simple)
       const div = document.createElement("div");
       div.className = "gallery-card__video-fallback";
       div.textContent = "Video";
@@ -100,30 +76,44 @@
     badge.textContent = "Video";
     a.appendChild(badge);
 
-    // OPTIONAL: embed YouTube/Vimeo on click? (We keep it simple: open new tab)
-    // If you later want inline embeds, we can add a lightbox.
-
     mediaEl.appendChild(a);
   };
 
-  // Collect tags
+  // Tags
   const tagSet = new Set();
   cards.forEach((c) => {
     const tags = (c.dataset.tags || "").split("|").filter(Boolean);
     tags.forEach((t) => tagSet.add(t));
   });
-  const tags = Array.from(tagSet).sort((a, b) => a.localeCompare(b, "en"));
 
-  // Build filter buttons
-  const makeBtn = (label) => {
-    const b = document.createElement("button");
-    b.type = "button";
-    b.className = "gallery__filter";
-    b.textContent = label;
-    b.dataset.filter = label;
-    return b;
-  };
-  tags.forEach((t) => filterWrap.appendChild(makeBtn(t)));
+  Array.from(tagSet)
+    .sort((a, b) => a.localeCompare(b, "en"))
+    .forEach((tag) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "gallery__filter";
+      button.textContent = tag;
+      button.dataset.filter = tag;
+      filterWrap.appendChild(button);
+    });
+
+  // Years
+  const years = Array.from(
+    new Set(
+      cards
+        .map((card) => (card.dataset.date || "").slice(0, 4))
+        .filter(Boolean)
+    )
+  ).sort((a, b) => b.localeCompare(a));
+
+  if (yearSelect) {
+    years.forEach((year) => {
+      const option = document.createElement("option");
+      option.value = year;
+      option.textContent = year;
+      yearSelect.appendChild(option);
+    });
+  }
 
   // Sort: pinned first, then newest first
   const sorted = cards.slice().sort((a, b) => {
@@ -136,24 +126,34 @@
     return bd - ad;
   });
 
-  // Render in sorted order + format date + render media
-  sorted.forEach((c) => {
-    const dateEl = c.querySelector("[data-date-label]");
-    if (dateEl) dateEl.textContent = formatDate(c.dataset.date);
-    renderMedia(c);
-    grid.appendChild(c);
+  sorted.forEach((card) => {
+    const dateEl = card.querySelector("[data-date-label]");
+    if (dateEl) dateEl.textContent = formatDate(card.dataset.date);
+
+    if (card.dataset.pinned === "true") {
+      card.classList.add("gallery-card--pinned");
+      card.setAttribute("aria-label", `${card.dataset.title || "Gallery item"} — pinned`);
+    }
+
+    renderMedia(card);
+    grid.appendChild(card);
   });
 
   let activeFilter = "all";
+  let activeYear = "all";
   let query = "";
 
   const setActiveButton = () => {
-    root.querySelectorAll(".gallery__filter").forEach((b) => b.classList.remove("is-active"));
-    const sel =
+    root.querySelectorAll(".gallery__filter").forEach((button) => {
+      button.classList.remove("is-active");
+    });
+
+    const selected =
       activeFilter === "all"
         ? allBtn
         : root.querySelector(`.gallery__filter[data-filter="${CSS.escape(activeFilter)}"]`);
-    if (sel) sel.classList.add("is-active");
+
+    if (selected) selected.classList.add("is-active");
   };
 
   const matches = (card) => {
@@ -162,9 +162,16 @@
       if (!tags.includes(activeFilter)) return false;
     }
 
+    if (activeYear !== "all") {
+      const year = (card.dataset.date || "").slice(0, 4);
+      if (year !== activeYear) return false;
+    }
+
     if (query) {
-      const hay = `${card.dataset.title || ""}`.toLowerCase();
-      if (!hay.includes(query)) return false;
+      const haystack = `${card.dataset.title || ""} ${(card.dataset.tags || "").replaceAll("|", " ")}`
+        .toLowerCase();
+
+      if (!haystack.includes(query)) return false;
     }
 
     return true;
@@ -172,6 +179,7 @@
 
   const update = () => {
     let visible = 0;
+
     sorted.forEach((card) => {
       const ok = matches(card);
       card.hidden = !ok;
@@ -182,14 +190,20 @@
     setActiveButton();
   };
 
-  root.addEventListener("click", (e) => {
-    const btn = e.target.closest(".gallery__filter");
-    if (!btn) return;
-    const val = btn.dataset.filter;
-    if (!val) return;
-    activeFilter = val === "all" ? "all" : val;
+  root.addEventListener("click", (event) => {
+    const button = event.target.closest(".gallery__filter");
+    if (!button) return;
+
+    activeFilter = button.dataset.filter || "all";
     update();
   });
+
+  if (yearSelect) {
+    yearSelect.addEventListener("change", () => {
+      activeYear = yearSelect.value || "all";
+      update();
+    });
+  }
 
   if (searchInput) {
     searchInput.addEventListener("input", () => {

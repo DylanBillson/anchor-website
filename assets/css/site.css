@@ -1857,3 +1857,46 @@ select{
     grid-template-columns: 1fr;
   }
 }
+/* Gallery year filter */
+.gallery__year-filter {
+  width: auto;
+  min-width: 130px;
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #fff;
+  color: var(--color-text);
+  font-weight: 800;
+}
+
+/* Pinned gallery items */
+.gallery-card--pinned {
+  position: relative;
+  border-color: color-mix(in srgb, var(--color-primary) 55%, var(--color-border));
+  box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+}
+
+.gallery-card--pinned::before {
+  content: "Pinned";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  background: var(--color-primary);
+  color: var(--color-primary-contrast);
+  font-weight: 900;
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+  padding: 6px 10px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+.gallery-card--pinned::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid color-mix(in srgb, var(--color-primary) 70%, white);
+  border-radius: var(--radius);
+  pointer-events: none;
+}
