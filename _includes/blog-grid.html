@@ -1,4 +1,9 @@
-<section class="blog-grid" aria-label="Blog posts">
+<section class="blog-grid" aria-label="Blog posts" data-blog-grid>
+  <div class="blog-grid__controls">
+    <label class="sr-only" for="blog-search">Search blog posts</label>
+    <input id="blog-search" type="text" placeholder="Search blog…" data-blog-search />
+  </div>
+
   {% assign pinned_posts = site.blog | where: "pinned", true | sort: "date" | reverse %}
   {% assign regular_posts = site.blog | where_exp: "post", "post.pinned != true" | sort: "date" | reverse %}
 
@@ -12,6 +17,10 @@
         {% include blog-card.html post=post pinned=false %}
       {% endfor %}
     </div>
+
+    <p class="blog-grid__empty" data-blog-empty hidden>
+      <em>No blog posts match your search.</em>
+    </p>
   {% else %}
     <div class="blog-grid__empty">
       <p>No blog posts have been published yet.</p>
