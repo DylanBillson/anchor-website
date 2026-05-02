@@ -19,9 +19,6 @@ food:
 
   sunday_roast:
     hours:
-      - days: "Lunch"
+      - days: "Sunday"
         open: "12:00"
-        close: "14:30"
-      - days: "Dinner"
-        open: "18:00"
         close: "20:30"

@@ -3,7 +3,6 @@
   if (!root) return;
 
   const apiUrl = root.dataset.menusApiUrl;
-  const linksEl = document.getElementById("menus-api-links");
   const loadingEl = document.getElementById("menus-loading");
   const errorEl = document.getElementById("menus-error");
   const emptyEl = document.getElementById("menus-empty");
@@ -16,15 +15,6 @@
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#039;");
-  };
-
-  const slugify = (value) => {
-    return String(value || "")
-      .toLowerCase()
-      .trim()
-      .replace(/&/g, "and")
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "");
   };
 
   const normaliseText = (value) => {
@@ -129,20 +119,14 @@
     return renderStandardSection(block);
   };
 
-  const renderMenu = (menu, index) => {
+  const renderMenu = (menu) => {
     const title = menu.public_title || menu.internal_title || "Menu";
-    const id = `menu-${slugify(title || menu.category || index)}`;
     const blocks = Array.isArray(menu.blocks) ? menu.blocks.slice().sort(sortByOrder) : [];
 
     return `
-      <details class="menu-details" id="${escapeHtml(id)}">
+      <details class="menu-details">
         <summary class="menu-details__summary">
           <span class="menu-details__title">${escapeHtml(title)}</span>
-          ${
-            menu.category
-              ? `<span class="menu-details__sub">${escapeHtml(menu.category)}</span>`
-              : ""
-          }
         </summary>
 
         <section class="menu">
@@ -155,32 +139,11 @@
     `;
   };
 
-  const renderQuickLinks = (menus) => {
-    if (!linksEl) return;
-
-    const menuLinks = menus
-      .map((menu, index) => {
-        const title = menu.public_title || menu.internal_title || "Menu";
-        const id = `menu-${slugify(title || menu.category || index)}`;
-        return `<a href="#${escapeHtml(id)}">${escapeHtml(title)}</a>`;
-      })
-      .join("");
-
-    linksEl.innerHTML = `
-      <a href="#book">Book a table</a>
-      ${menuLinks}
-      <a href="#allergens">Allergen information</a>
-    `;
-
-    linksEl.hidden = false;
-  };
-
   const setError = () => {
     if (loadingEl) loadingEl.hidden = true;
     if (errorEl) errorEl.hidden = false;
     if (emptyEl) emptyEl.hidden = true;
     if (listEl) listEl.hidden = true;
-    if (linksEl) linksEl.hidden = true;
   };
 
   const setEmpty = () => {
@@ -188,7 +151,6 @@
     if (errorEl) errorEl.hidden = true;
     if (emptyEl) emptyEl.hidden = false;
     if (listEl) listEl.hidden = true;
-    if (linksEl) linksEl.hidden = true;
   };
 
   const setLoaded = () => {
@@ -223,7 +185,6 @@
       });
 
       listEl.innerHTML = sortedMenus.map(renderMenu).join("");
-      renderQuickLinks(sortedMenus);
       setLoaded();
     } catch (error) {
       setError();

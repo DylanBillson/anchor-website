@@ -22,7 +22,7 @@ items:
   - title: "Maddie Storvold: Streets and Avenues"
     date: "2024-05-29"
     type: "video"
-    pinned: false
+    pinned: true
     tags: ["Gig"]
     media_url: "https://www.youtube.com/watch?v=7qRVTBy5qP8"
     thumb_url: "/assets/img/gallery/maddie-storvold-streets-and-avenues.webp"
@@ -131,7 +131,7 @@ items:
   - title: "David Celia And Co"
     date: "2024-11-09"
     type: "image"
-    pinned: false
+    pinned: true
     tags: ["Gig"]
     media_url: "/assets/img/gallery/david-celia-and-co-2024-11-09.webp"
 
@@ -166,7 +166,7 @@ items:
   - title: "Harrison Wallace"
     date: "2024-01-28"
     type: "image"
-    pinned: false
+    pinned: true
     tags: ["Gig"]
     media_url: "/assets/img/gallery/harrison-wallace-2024-01-28.webp"
 

@@ -10,7 +10,7 @@ intro: "Walking the coast path? We can help with lifts, packed lunches, and a wa
 
 We can arrange pick ups and drop offs from nearby sections of the South West Coast Path, from **Hartland Quay to Clovelly**.
 
-The Anchor is a **Way Maker**, supporting the South West Coast Path.
+The Anchor is a <strong><a href="https://support.southwestcoastpath.org.uk/portal/s/placefinder" target="_blank" rel="noopener">Way Maker</a></strong>, supporting the South West Coast Path.
 
 ---
 
@@ -22,7 +22,7 @@ We can supply packed lunches, with **vegetarian, vegan and gluten-free options**
 
 ## How much notice?
 
-- We require a **minimum of seven days** notice for pick-ups. If we're unable to provide transport, we can offer details of local taxi services.
+- We’ll do our best to arrange lifts to and from the coastal path; the more notice you give the better.
 - Packed lunches should be ordered **the night before**.  
 - Please let us know if you have any particular dietary requirements.
 
@@ -32,7 +32,7 @@ We can supply packed lunches, with **vegetarian, vegan and gluten-free options**
 
 England’s longest waymarked long-distance footpath: **630 miles** in total.
 
-If you walk the entire distance, you’ll have climbed **114,931 feet**, equivalent to climbing **Chomolangma nearly four times**.
+If you walk the entire distance, you’ll have climbed **114,931 feet**, equivalent to climbing **Chomolungma / Sagarmatha nearly four times**.
 
 <div class="waymaker">
   <a class="waymaker__button" href="https://support.southwestcoastpath.org.uk/portal/s/placefinder" target="_blank" rel="noopener">

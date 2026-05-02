@@ -3,7 +3,7 @@ title: "Bar"
 description: "The Anchor Inn bar in Hartland — open daily from 11am. Drinks, darts, pool, a sun terrace, and two pianos."
 hero_image: /assets/img/hero/anchor-hero-bar.webp
 hero_alt: "The Anchor Inn bar area"
-intro: "A relaxed village bar with good drinks, classic pub games, and a terrace for sunny days."
+intro: "A relaxed village bar with Devon real ale and ciders, keeping it local and international."
 ---
 
 {% include opening-times.html context="bar" %}
