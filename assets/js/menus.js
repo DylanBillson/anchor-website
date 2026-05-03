@@ -38,10 +38,12 @@
     lunch: 2,
     evening: 3,
     dinner: 3,
-    children: 4,
-    childrens: 4,
-    "children's": 4,
-    kids: 4
+    sunday: 4,
+    roast: 4,
+    children: 5,
+    childrens: 5,
+    "children's": 5,
+    kids: 5
   };
 
   const getMenuOrder = (menu) => {
@@ -77,7 +79,7 @@
           <span class="menu__item-name">${escapeHtml(item.name)}</span>
           ${price}
         </div>
-        ${mode !== "compact" ? description : ""}
+        ${mode !== "compact" || priceAsDescription ? description : ""}
         ${tags}
       </li>
     `;
