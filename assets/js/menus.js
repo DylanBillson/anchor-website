@@ -26,20 +26,48 @@
     return String(price).replace(/\.0$/, "");
   };
 
+  const cleanMenuTitle = (title) => {
+    return String(title || "Menu")
+      .replace(/^\s*(the\s+)?anchor\s+inn\s*/i, "")
+      .trim();
+  };
+
+  const menuCategoryOrder = {
+    special: 1,
+    specials: 1,
+    lunch: 2,
+    evening: 3,
+    dinner: 3,
+    children: 4,
+    childrens: 4,
+    "children's": 4,
+    kids: 4
+  };
+
+  const getMenuOrder = (menu) => {
+    const category = String(menu.category || "").toLowerCase().trim();
+    return menuCategoryOrder[category] || 99;
+  };
+
   const sortByOrder = (a, b) => {
     return (a.sort_order || 0) - (b.sort_order || 0);
   };
 
   const renderItem = (item, mode = "detailed") => {
-    const description = item.description
-      ? `<p class="menu__item-desc">${normaliseText(escapeHtml(item.description))}</p>`
+    const itemName = String(item.name || "").trim().toLowerCase();
+    const priceAsDescription = itemName === "ice creams and sorbets";
+
+    const descriptionText = priceAsDescription ? item.price : item.description;
+
+    const description = descriptionText
+      ? `<p class="menu__item-desc">${normaliseText(escapeHtml(descriptionText))}</p>`
       : "";
 
     const tags = item.special_tags
       ? `<p class="menu__item-meta"><span class="menu__item-meta-group"><strong>Tags:</strong> <span class="tag">${escapeHtml(item.special_tags)}</span></span></p>`
       : "";
 
-    const price = item.price
+    const price = item.price && !priceAsDescription
       ? `<span class="menu__item-price">${escapeHtml(formatPrice(item.price))}</span>`
       : "";
 
@@ -120,7 +148,8 @@
   };
 
   const renderMenu = (menu) => {
-    const title = menu.public_title || menu.internal_title || "Menu";
+    const rawTitle = menu.public_title || menu.internal_title || "Menu";
+    const title = cleanMenuTitle(rawTitle);
     const blocks = Array.isArray(menu.blocks) ? menu.blocks.slice().sort(sortByOrder) : [];
 
     return `
@@ -181,7 +210,11 @@
       }
 
       const sortedMenus = menus.slice().sort((a, b) => {
-        return String(a.category || "").localeCompare(String(b.category || ""), "en");
+        const orderDiff = getMenuOrder(a) - getMenuOrder(b);
+        if (orderDiff !== 0) return orderDiff;
+
+        return String(a.public_title || a.internal_title || "")
+          .localeCompare(String(b.public_title || b.internal_title || ""), "en");
       });
 
       listEl.innerHTML = sortedMenus.map(renderMenu).join("");
